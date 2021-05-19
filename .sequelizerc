@@ -1,0 +1,11 @@
+// .sequelizerc
+
+const path = require('path');
+require("babel-register");
+
+module.exports = {
+  'config': path.resolve('app/infrastructure/config', 'databaseConfigurations.js'),
+  'models-path': path.resolve('app/infrastructure/db', 'models'),
+  'seeders-path': path.resolve('app/infrastructure/db', 'seeders'),
+  'migrations-path': path.resolve('app/infrastructure/db', 'migrations')
+};
