@@ -5,9 +5,8 @@
 2- cd + your project path on your PC . </br>
 3- Run this comman #npm install </br>
 4- Send me an email to get .env file. </br>
-5- Put the .env file global on project folder. </br>
+5- Put the .env file global on project folder. 
 
-==========================================================================
 ## Now you can use some scripts :
 (Run on dev environment) #npm run server </br>
 (Run on production environment) #NODE_ENV=production npm run server </br>
