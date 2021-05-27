@@ -1,7 +1,7 @@
 const MobileUserRepository = require('../../infrastructure/repositories/MobileUserReposetoryMySQL') 
-const MobileUserDomain = require('../../domain/MobileUserDomain')
+const MobileUser = require('../../domain/MobileUser')
 
 module.exports = (mobileNumber)=>{
-        const mobileUserDomain = new MobileUserDomain(mobileNumber)
-        return  MobileUserRepository.createMobileUser(mobileUserDomain)
+        const mobileUser = new MobileUser(mobileNumber)
+        return  MobileUserRepository.createMobileUser(mobileUser)
 }
