@@ -1,8 +1,8 @@
 const express = require('express')
-const userRoutes = require('../../interfaces/routes/users')
+const mobileUserRouters = require('../../interfaces/routes/mobileUser')
 const DatabaseService = require('../db/databaseService/database')
 const connection = require('../config/databaseConfigurations')
-const WebServerService = require('./webServer')
+const WebServerService = require('./checkServerType')
 const db = require('../db/models/index')
 require('dotenv/config')
 
@@ -24,6 +24,6 @@ module.exports =()=>{
     } 
     DatabaseService.testConnection(db.sequelize)
 
-    app.use('/api' , userRoutes)
+    app.use('/api' , mobileUserRouters)
     app.listen(PORT , ()=>{console.log(`${serverType} Server Running on ${PORT} !`)})
 }

@@ -4,10 +4,16 @@ module.exports = class{
     getUser(){
         throw new Error('ERROR_METHOD_NOT_EMPLEMENTED')
     }
+    getAllUsers(){
+        throw new Error('ERROR_METHOD_NOT_EMPLEMENTED')
+    }
     removeUser(userId){
         throw new Error('ERROR_METHOD_NOT_EMPLEMENTED')
     }
-    find(){
+    findAllUsers(){
+        throw new Error('ERROR_METHOD_NOT_EMPLEMENTED')
+    }
+    findUser(){
         throw new Error('ERROR_METHOD_NOT_EMPLEMENTED')
     }
     updateUser(userId){

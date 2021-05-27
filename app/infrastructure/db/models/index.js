@@ -3,7 +3,7 @@ const fs = require('fs');
 const path = require('path');
 const Sequelize = require('sequelize');
 const connection = require('../DB_connection/databaseCredentials')
-const WebServerService = require('../../web_server/webServer')
+const WebServerService = require('../../web_server/checkServerType')
 const basename = path.basename(__filename);
 const db = {};
 let sequelize = {};
@@ -29,7 +29,7 @@ Object.keys(db).forEach(modelName => {
   }
 });
 //models .
-db.userModel = require('./user')(sequelize , Sequelize)
+db.userModel = require('./MobileUser')(sequelize , Sequelize)
 
 db.sequelize = sequelize;
 db.Sequelize = Sequelize;

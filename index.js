@@ -1,3 +1,3 @@
-const startServer = require('./app/infrastructure/web_server/bootstrapServer');
+const startServer = require('./app/infrastructure/web_server/startServer');
 
 startServer()
