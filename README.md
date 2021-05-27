@@ -1,7 +1,7 @@
 ### This is Saqy API 🌱
 
 ## You can use it on your local machine by following simple steps : </br>
-1- git clone https://github.com/bastawesy94/clean-arch-express-project.git </br>
+1- git clone https://github.com/Fudex-sa/saqy-backend.git </br>
 2- cd + your project path on your PC . </br>
 3- Run this comman #npm install </br>
 4- Send me an email to get .env file. </br>
