@@ -1,4 +1,5 @@
 const express = require('express')
+const bodyParser = require('body-parser')
 const mobileUserRouters = require('../../interfaces/routes/mobileUser')
 const DatabaseService = require('../db/databaseService/database')
 const connection = require('../config/databaseConfigurations')
@@ -24,6 +25,8 @@ module.exports =()=>{
     } 
     DatabaseService.testConnection(db.sequelize)
 
-    app.use('/api' , mobileUserRouters)
-    app.listen(PORT , ()=>{console.log(`${serverType} Server Running on ${PORT} !`)})
+    app.use(bodyParser.json());
+    app.use(express.json());
+    app.use('/api' , mobileUserRouters);
+    app.listen(PORT , ()=>{console.log(`${serverType} Server Running on ${PORT} !`)});
 }

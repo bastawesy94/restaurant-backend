@@ -9,4 +9,11 @@ module.exports = class extends UserRepo{
     static createMobileUser(user){
         return db.userModel.create(user)
     }
+    static findMobileUserByMobileNumber(mobileNumber){
+        return db.userModel.findOne({
+            where :{
+                mobileNumber : mobileNumber
+            }  
+        })
+    }
 }

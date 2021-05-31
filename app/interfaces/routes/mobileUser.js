@@ -3,6 +3,6 @@ const mobileUserRouters = express.Router()
 const UserController = require('../controllers/MobileUserController')
 
 mobileUserRouters.get('/all-mobile-users', UserController.getAllMobileUsers)
-mobileUserRouters.get('/create-mobile-user', UserController.createMobileUser)
+mobileUserRouters.post('/signUp', UserController.signUp)
 
 module.exports = mobileUserRouters
