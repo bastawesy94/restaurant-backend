@@ -1,12 +1,14 @@
 const MobileUserRepository = require('../../infrastructure/repositories/MobileUserReposetoryMySQL') 
 const MobileUser = require('../../domain/MobileUser')
 const bcrypt = require('bcrypt')
-module.exports = (mobileNumber , password)=>{
-        const createdMobileUser = undefined;
-        bcrypt.hash(password, 10, (error, encryptedPassword)=>{
-                mobileUser = new MobileUser(mobileNumber ,encryptedPassword);
-                reatedMobileUser = MobileUserRepository.createMobileUser(mobileUser);
-        });
-        return createdMobileUser;
-
+const PasswordEncryption = require('../../infrastructure/security/PasswordEncryption')
+module.exports = async(mobileNumber , password)=>{
+        const saltRounds = 10;
+        return bcrypt.hash(password, saltRounds).then((encryptedPassword)=> {
+                const mobileUser = new MobileUser(mobileNumber ,encryptedPassword);
+                return MobileUserRepository.createMobileUser(mobileUser)
+            },
+            (error)=> {
+                return error;
+            });
 }
