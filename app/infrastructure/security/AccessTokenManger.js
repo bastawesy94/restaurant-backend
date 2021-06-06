@@ -8,4 +8,9 @@ module.exports = class extends AccessTokenManager {
         return jwt.sign({mobileUserId,role} , process.env.DEV_JWT_PRRIVATE_KEY);
 
     }
+
+    static decode(token , JWT_PRIVATE_KEY){
+        const decoded = jwt.verify(token , JWT_PRIVATE_KEY)
+        return decoded;
+    }
 }

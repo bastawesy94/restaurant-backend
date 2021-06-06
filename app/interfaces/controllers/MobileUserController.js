@@ -1,16 +1,14 @@
 const listMobileUsers = require('../../application/use_cases/listMobileUsers')
 const signUp = require('../../application/use_cases/signUp')
 const auth = require('../../application/use_cases/mobileUserAuth')
-
-const MobileUser = require('../../domain/MobileUser')
 const Response = require('../../infrastructure/helper-tools/ResponseFormate')
 
 module.exports = class {
 
     static async getAllMobileUsers(req , res){
         try{
-          /*const current = req.mobileUser ; 
-          console.log(current)*/
+          const current = req.mobileUser ; 
+          console.log(current)
           const mobileUsers = await listMobileUsers()
           return res.status(200).json(Response.format(200,'Users has been success .',mobileUsers))
         }   
@@ -37,7 +35,7 @@ module.exports = class {
             const token = await auth(password , mobileNumber);
             console.log("controller token : " + token)
             if(token) 
-                return res.header('mobile-user-token' , token ).status(200).json(Response.format(200,"Mobile user details.",
+                return res.header('mobile-user-token' , token).status(200).json(Response.format(200,"Mobile user details.",
                 {
                    'mobile-user-token' : token,
                    'mobileNumber' : mobileNumber  

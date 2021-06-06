@@ -1,4 +1,5 @@
 const jwt = require('jsonwebtoken')
+const AccessTokenManager = require('../../infrastructure/security/AccessTokenManger')
 const Response = require('../../infrastructure/helper-tools/ResponseFormate')
 require('dotenv/config')
 
@@ -7,8 +8,7 @@ module.exports = (req , res ,next)=>{
         const token = req.header('mobile-user-token')
     if(!token)
         return res.status(401).json(Response.format(401,'Access denied , token not found !'))
-    const decoded = jwt.verify(token , process.env.DEV_JWT_PRRIVATE_KEY)
-    req.mobileUser = decoded;
+    req.mobileUser = AccessTokenManager.decode(token,process.env.DEV_JWT_PRRIVATE_KEY)
     next();
     }
     catch(error){
