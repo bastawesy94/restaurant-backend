@@ -16,4 +16,14 @@ module.exports = class extends UserRepo{
             }  
         })
     }
+    static addPasswordtoCurrentMobileUser(user){
+        return db.userModel.update(
+            {
+                password : user.password
+            },
+            {where :{
+                mobileNumber : user.mobileNumber
+            }  
+            })
+    }
 }

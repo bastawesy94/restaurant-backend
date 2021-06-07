@@ -1,9 +1,28 @@
 const listMobileUsers = require('../../application/use_cases/listMobileUsers')
+const saveMobileUserNumber = require('../../application/use_cases/saveMobileUserNumber')
 const signUp = require('../../application/use_cases/signUp')
 const auth = require('../../application/use_cases/mobileUserAuth')
 const Response = require('../../infrastructure/helper-tools/ResponseFormate')
 
 module.exports = class {
+
+    static async createMobileUser(req , res){
+        try{
+            const {mobileNumber} = req.body;
+            const token = await saveMobileUserNumber(mobileNumber)
+            console.log("token : " + token)
+            if(typeof token === 'string')
+                 return res.header('mobile-user-token' , token).status(200).json(Response.format(200,"Mobile user is saved.",
+                      {
+                        'mobile-user-token' : token,
+                       }))
+            return res.status(400).json(Response.format(400,'error'))
+        }
+        catch(error){
+            console.log(error)
+            return res.status(400).json(Response.format(400,'error',error))
+        }
+    }
 
     static async getAllMobileUsers(req , res){
         try{
@@ -20,9 +39,14 @@ module.exports = class {
 
     static async signUp(req , res){
         try{
-          const {password , mobileNumber } = req.body
-          const {dataValues} = await signUp(mobileNumber , password)
-           if(dataValues) return res.status(200).json(Response.format(200,"sign up process is done.",dataValues))
+            const {password} = req.body
+            const {mobileUser} = req.mobileUser ;
+            console.log(mobileUser) 
+            const result = await signUp(mobileUser.mobileNumber, password)
+            console.log(typeof result)
+            if(result[0] === 1)
+                 return res.status(200).json(Response.format(200,"sign up process is done."))
+             return res.status(400).json(Response.format(400,"sign up process is faild."))
         }   
         catch(error){
             return res.status(400).json(Response.format(400,"ERROR , Bad Request is happened .",error.message))

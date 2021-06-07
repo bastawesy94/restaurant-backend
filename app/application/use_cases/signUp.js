@@ -7,7 +7,7 @@ module.exports = async(mobileNumber , password)=>{
         return bcrypt.hash(password, saltRounds)
         .then((encryptedPassword)=> {
                 const mobileUser = new MobileUser(mobileNumber ,encryptedPassword);
-                return MobileUserRepository.createMobileUser(mobileUser)
+                return MobileUserRepository.addPasswordtoCurrentMobileUser(mobileUser)
             },
             (error)=> {
                 return error;
