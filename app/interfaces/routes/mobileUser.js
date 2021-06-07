@@ -7,5 +7,6 @@ mobileUserRouters.get('/all-mobile-users',mobileUserAuth, UserController.getAllM
 mobileUserRouters.post('/signUp',mobileUserAuth, UserController.signUp)
 mobileUserRouters.post('/auth', UserController.auth)
 mobileUserRouters.post('/create-mobile-user', UserController.createMobileUser)
+mobileUserRouters.post('/verify-mobile-user', UserController.verifyMobileUser)
 
 module.exports = mobileUserRouters

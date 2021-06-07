@@ -2,40 +2,10 @@ const listMobileUsers = require('../../application/use_cases/listMobileUsers')
 const saveMobileUserNumber = require('../../application/use_cases/saveMobileUserNumber')
 const signUp = require('../../application/use_cases/signUp')
 const auth = require('../../application/use_cases/mobileUserAuth')
+const mobileUserIdVerified = require('../../application/use_cases/mobileUserIdVerified')
 const Response = require('../../infrastructure/helper-tools/ResponseFormate')
 
 module.exports = class {
-
-    static async createMobileUser(req , res){
-        try{
-            const {mobileNumber} = req.body;
-            const token = await saveMobileUserNumber(mobileNumber)
-            console.log("token : " + token)
-            if(typeof token === 'string')
-                 return res.header('mobile-user-token' , token).status(200).json(Response.format(200,"Mobile user is saved.",
-                      {
-                        'mobile-user-token' : token,
-                       }))
-            return res.status(400).json(Response.format(400,'error'))
-        }
-        catch(error){
-            console.log(error)
-            return res.status(400).json(Response.format(400,'error',error))
-        }
-    }
-
-    static async getAllMobileUsers(req , res){
-        try{
-          const current = req.mobileUser ; 
-          console.log(current)
-          const mobileUsers = await listMobileUsers()
-          return res.status(200).json(Response.format(200,'Users has been success .',mobileUsers))
-        }   
-        catch(error){
-            console.log(console.error())
-            return res.status(400).json(Response.format(400,mobileUsers,error.message))
-        }
-    }
 
     static async signUp(req , res){
         try{
@@ -71,4 +41,42 @@ module.exports = class {
         }
     }
 
+    static async createMobileUser(req , res){
+        try{
+            const {mobileNumber} = req.body;
+            const token = await saveMobileUserNumber(mobileNumber)
+            console.log("token : " + token)
+            if(typeof token === 'string')
+                 return res.header('mobile-user-token' , token).status(200).json(Response.format(200,"Mobile user is saved.",
+                      {
+                        'mobile-user-token' : token,
+                       }))
+            return res.status(400).json(Response.format(400,'error'))
+        }
+        catch(error){
+            console.log(error)
+            return res.status(400).json(Response.format(400,'error',error))
+        }
+    }
+
+    static async getAllMobileUsers(req , res){
+        try{
+          const current = req.mobileUser ; 
+          console.log(current)
+          const mobileUsers = await listMobileUsers()
+          return res.status(200).json(Response.format(200,'Users has been success .',mobileUsers))
+        }   
+        catch(error){
+            console.log(console.error())
+            return res.status(400).json(Response.format(400,mobileUsers,error.message))
+        }
+    }
+
+    static verifyMobileUser(req , res){
+        const verificationCode = req.body;
+        const isVerified = mobileUserIdVerified(verificationCode)
+        if(isVerified)
+            return res.status(200).json(Response.format(200,'User is verified ?.',isVerified))
+        return res.status(400).json(Response.format(400,'User is verified ?.',isVerified))
+    }
 }
