@@ -3,15 +3,10 @@ const fs = require('fs');
 const path = require('path');
 const Sequelize = require('sequelize');
 const connection = require('../DB_connection/databaseCredentials')
-const WebServerService = require('../../web_server/checkServerType')
+const WebServerService = require('../../web_server/WebServerService')
 const basename = path.basename(__filename);
 const db = {};
-let sequelize = {};
-let isProduction = WebServerService.isProductionServer()
-
- isProduction?
-  sequelize = connection.productionConnection 
-  : sequelize = connection.developmentConnection
+let {sequelize} = WebServerService.getServerINFO()
 
 fs
   .readdirSync(__dirname)
