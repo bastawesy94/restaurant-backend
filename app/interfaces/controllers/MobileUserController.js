@@ -4,9 +4,9 @@ const signUp = require('../../application/use_cases/signUp')
 const auth = require('../../application/use_cases/mobileUserAuth')
 const mobileUserIdVerified = require('../../application/use_cases/mobileUserIdVerified')
 const Response = require('../../infrastructure/helper-tools/ResponseFormate')
+const registerContainer = require('../../infrastructure/config/DI-setup/DIcontainer');
 
 module.exports = class {
-
     static async signUp(req , res){
         try{
             const {password} = req.body
@@ -68,7 +68,7 @@ module.exports = class {
         }   
         catch(error){
             console.log(console.error())
-            return res.status(400).json(Response.format(400,mobileUsers,error.message))
+            return res.status(400).json(Response.format(400,error.message))
         }
     }
 
@@ -79,4 +79,19 @@ module.exports = class {
             return res.status(200).json(Response.format(200,'User is verified ?.',isVerified))
         return res.status(400).json(Response.format(400,'User is verified ?.',isVerified))
     }
+
+    static async show(req , res){
+        try{
+            // const container = registerContainer()
+            // const service = container.resolve('demoInstance');
+            
+            // const mobileUsers = await service.getAll();
+            return res.status(200).json(Response.format(200,'Users has been success .'))
+        }   
+        catch(error){
+            console.log(console.error())
+            return res.status(400).json(Response.format(400,error.message))
+        }
+    }
+
 }

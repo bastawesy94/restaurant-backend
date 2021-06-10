@@ -18,6 +18,7 @@
   "author": "bastawesy",
   "license": "ISC",
   "dependencies": {
+    "awilix": "^4.3.4",
     "bcrypt": "^5.0.1",
     "dotenv": "^8.6.0",
     "express": "^4.17.1",
