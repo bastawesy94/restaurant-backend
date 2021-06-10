@@ -1,11 +1,12 @@
-const db = require('../db/models/index')
 const UserRepo = require('../../domain/MobileUserRepository')
-
+const db = require('../../infrastructure/db/models/index')
 module.exports = class extends UserRepo{
    
     static getAllMobileUsers(){
-        return db.userModel.findAll()
+        const users = db.userModel.findAll()
+        return users;
     }
+
     static createMobileUser(user){
         return db.userModel.create(user)
     }
@@ -24,6 +25,6 @@ module.exports = class extends UserRepo{
             {where :{
                 mobileNumber : user.mobileNumber
             }  
-            })
+        })
     }
 }
