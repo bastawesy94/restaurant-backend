@@ -2,7 +2,7 @@
 node_modules
 
 # dotenv file , it holds sensetive data belongs to infrastructure .
-.env
+#.env
 
 # Logs
 *.log
