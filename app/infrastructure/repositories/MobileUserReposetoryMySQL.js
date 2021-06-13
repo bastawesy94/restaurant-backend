@@ -1,29 +1,35 @@
 const UserRepo = require('../../domain/MobileUserRepository')
-const db = require('../../infrastructure/db/models/index')
+
 module.exports = class extends UserRepo{
-   
-    static getAllMobileUsers(){
-        const users = db.userModel.findAll()
-        return users;
+   constructor({db}){
+       super()
+       this.db = db
+   }
+
+    getAllMobileUsers(){
+        return this.db.userModel.findAll()
     }
 
-    static createMobileUser(user){
-        return db.userModel.create(user)
+    createMobileUser(user){
+        return this.db.userModel.create(user)
     }
-    static findMobileUserByMobileNumber(mobileNumber){
-        return db.userModel.findOne({
+
+    findMobileUserByMobileNumber(mobileNumber){
+        return this.db.userModel.findOne({
             where :{
                 mobileNumber : mobileNumber
             }  
         })
     }
-    static addPasswordtoCurrentMobileUser(user){
-        return db.userModel.update(
+
+    addPasswordtoCurrentMobileUser(user){
+        return this.db.userModel.update(
             {
                 password : user.password
             },
-            {where :{
-                mobileNumber : user.mobileNumber
+            {
+            where :{
+                 mobileNumber : user.mobileNumber
             }  
         })
     }

@@ -1,19 +1,23 @@
 const { createContainer, asClass, asValue, asFunction } = require('awilix');
-const awilix = require('awilix')
-const Demo = require('../../../application/use_cases/DemoService')
-const Repo = require('../../repositories/MobileUserReposetoryMySQL');
-const db = require('../../db/models/index')
+const MobileUserServices = require('../../../application/use_cases/MobileUserServices')
+const MobileUserControllers = require('../../../interfaces/controllers/MobileUserControllers')
+const MobileUserRepository = require('../../repositories/MobileUserReposetoryMySQL');
+const db = require('../../db/models/index');
 
 const registerContainer = (otherServices = null) => {
-    const container = createContainer();
-    container.register({
-        demoInstance: asClass(Demo),
-        repoInstance: asClass(Repo),
-        db :asValue(db),
-       ...otherServices,
-  });
+      const container = createContainer();
+      container.register({
+          //services 
+           mobileUserServices : asClass(MobileUserServices),
+          //controllers
+          mobileUserControllers: asClass(MobileUserControllers),
+          //repositories
+          mobileUserRepository: asClass(MobileUserRepository),
+          //database
+          db :asValue(db),
+          ...otherServices,
+      });
 
-  return container;
+      return container;
 };
-
 module.exports = registerContainer;

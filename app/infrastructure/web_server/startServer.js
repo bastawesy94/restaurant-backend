@@ -7,9 +7,8 @@ require('dotenv/config')
 module.exports =()=>{
     const {PORT , serverType ,sequelize} = WebServerService.getServerINFO()
     const app = express()
-    DatabaseService.testConnection(sequelize)
     app.use(express.json());
     app.use('/api' , mobileUserRouters);
+    DatabaseService.testConnection(sequelize)
     app.listen(PORT,()=>{console.log(`${serverType} Server Running on ${PORT} !`)});
-
 }
