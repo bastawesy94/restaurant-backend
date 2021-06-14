@@ -47,6 +47,7 @@ module.exports = class {
                         return this.mobileUserRepository.addPasswordtoCurrentMobileUser(mobileUser)
                     },
                     (error)=> {
+                        console.log(error)
                         return error;
                     });
         }
