@@ -9,8 +9,7 @@
     "migrate": "npx sequelize-cli db:migrate",
     "undomigrate": "npx sequelize-cli db:migrate:undo:all",
     "seed": "npx sequelize-cli db:seed:all",
-    "undoseed": "npx sequelize-cli db:seed:undo:all",
-    "oldmigrate" : "node app/infrastructure/db/migrations/scripts/Migrate.js"
+    "undoseed": "npx sequelize-cli db:seed:undo:all"
   },
   "repository": {
     "type": "git",
@@ -23,9 +22,12 @@
     "bcrypt": "^5.0.1",
     "dotenv": "^8.6.0",
     "express": "^4.17.1",
+    "express-locale": "^2.0.0",
+    "express-validator": "^6.12.0",
     "jest": "^26.6.3",
     "jsonwebtoken": "^8.5.1",
     "mysql2": "^2.2.5",
+    "node-polyglot": "^2.4.0",
     "sequelize": "^6.6.2"
   },
   "devDependencies": {

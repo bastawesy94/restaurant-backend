@@ -1,7 +1,7 @@
 const AccessTokenManager = require('../../infrastructure/security/AccessTokenManger')
 const bcrypt = require('bcrypt')
-const IntialMobileUser = require('../../domain/IntialMobileUser');
-const MobileUser = require('../../domain/MobileUser');
+const IntialMobileUser = require('../../domain/mobile-user/IntialMobileUser');
+const MobileUser = require('../../domain/mobile-user/MobileUser');
 
 module.exports = class {
         constructor({mobileUserRepository}){

@@ -1,4 +1,4 @@
-const Response = require('../../infrastructure/helper-tools/ResponseFormate')
+const Response = require('../serializers/ResponseFormate')
 
 module.exports = class{
     constructor({mobileUserServices}){
