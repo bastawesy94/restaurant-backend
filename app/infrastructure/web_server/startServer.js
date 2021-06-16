@@ -1,4 +1,6 @@
 const express = require('express')
+const createLocaleMiddleware = require('express-locale')
+const {startPolyglot} = require ('../../interfaces/middleware/determinLnaguage')
 const mobileUserRouters = require('../../interfaces/routes/mobileUser')
 const DatabaseService = require('../db/databaseService/database')
 const WebServerService = require('./WebServerService')
@@ -7,6 +9,11 @@ require('dotenv/config')
 module.exports =()=>{
     const {PORT , serverType ,sequelize} = WebServerService.getServerINFO()
     const app = express()
+    app.use(createLocaleMiddleware({
+        "priority": ["accept-language", "default"],
+        "default": "en_US"
+    }))
+    app.use(startPolyglot)
     app.use(express.json());
     app.use('/api' , mobileUserRouters);
     DatabaseService.testConnection(sequelize)

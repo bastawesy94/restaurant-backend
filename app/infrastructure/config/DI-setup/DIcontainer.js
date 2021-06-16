@@ -17,7 +17,6 @@ const registerContainer = (otherServices = null) => {
           db :asValue(db),
           ...otherServices,
       });
-
       return container;
 };
 module.exports = registerContainer;

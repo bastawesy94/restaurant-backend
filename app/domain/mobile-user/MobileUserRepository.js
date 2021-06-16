@@ -1,4 +1,4 @@
-const models = require('../infrastructure/db/models/index') //better to use DI.
+const models = require('../../infrastructure/db/models/index') //better to use DI.
 
 module.exports = class{
     getUser(){

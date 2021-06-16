@@ -1,8 +1,8 @@
 const AccessTokenManager = require('../../infrastructure/security/AccessTokenManger')
 const bcrypt = require('bcrypt')
-const IntialMobileUser = require('../../domain/IntialMobileUser');
-const MobileUser = require('../../domain/MobileUser');
-
+const IntialMobileUser = require('../../domain/mobile-user/IntialMobileUser');
+const MobileUser = require('../../domain/mobile-user/MobileUser');
+const isValidSaudiMobileNumber = require('../utilities/isValidSaudiMobileNumber')
 module.exports = class {
         constructor({mobileUserRepository}){
                 this.mobileUserRepository = mobileUserRepository
@@ -23,6 +23,8 @@ module.exports = class {
         }
 
         async mobieleUserAuth(password , mobileNumber){
+                if(!isValidSaudiMobileNumber(mobileNumber)) 
+                        return new Error('mobile user invalid , it must starts with 50,53,54,55,56,58 or 59.')    
                 const user = await this.mobileUserRepository.findMobileUserByMobileNumber(mobileNumber);
                 if(!user) throw Error('User is not found .')
                         const result = await bcrypt.compare(password ,user.password )
@@ -33,7 +35,9 @@ module.exports = class {
         async saveMobileUserNumber(mobileNumber){
                 const mobileUser = await this.mobileUserRepository.findMobileUserByMobileNumber(mobileNumber);
                 if(mobileUser)
-                     return new Error('mobile user is already exisit.')
+                        return new Error('mobile user is already exisit.')
+                if(!isValidSaudiMobileNumber(mobileNumber)) 
+                        return new Error('mobile user invalid , it must starts with 50,53,54,55,56,58 or 59.')    
                 const user = new IntialMobileUser(mobileNumber)
                 const createdUser = await this.mobileUserRepository.createMobileUser(user)
                 return AccessTokenManager.generate(createdUser , 'mobileUser'); //data,role

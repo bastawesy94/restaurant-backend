@@ -1,6 +1,6 @@
 const jwt = require('jsonwebtoken')
 const AccessTokenManager = require('../../infrastructure/security/AccessTokenManger')
-const Response = require('../../infrastructure/helper-tools/ResponseFormate')
+const Response = require('../../interfaces/serializers/ResponseFormate')
 require('dotenv/config')
 
 module.exports = (req , res ,next)=>{

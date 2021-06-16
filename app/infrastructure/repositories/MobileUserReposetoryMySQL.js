@@ -1,4 +1,4 @@
-const UserRepo = require('../../domain/MobileUserRepository')
+const UserRepo = require('../../domain/mobile-user/MobileUserRepository')
 
 module.exports = class extends UserRepo{
    constructor({db}){
