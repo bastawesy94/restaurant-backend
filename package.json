@@ -9,12 +9,7 @@
     "migrate": "npx sequelize-cli db:migrate",
     "undomigrate": "npx sequelize-cli db:migrate:undo:all",
     "seed": "npx sequelize-cli db:seed:all",
-<<<<<<< HEAD
-    "undoseed": "npx sequelize-cli db:seed:undo:all",
-    "oldmigrate": "node app/infrastructure/db/migrations/scripts/Migrate.js"
-=======
     "undoseed": "npx sequelize-cli db:seed:undo:all"
->>>>>>> 9b95f57968ce6f29efa64b0d100d2347b3e11597
   },
   "repository": {
     "type": "git",
