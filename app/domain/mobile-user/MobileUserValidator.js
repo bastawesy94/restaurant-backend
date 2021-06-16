@@ -73,21 +73,36 @@ module.exports = class{
                     check('mobileNumber')
                         .exists().withMessage('mobileNumberRequired')
                         .isString().withMessage('mobileNumbeString')
-                        .isLength({ min: 13, max: 15 }).withMessage('mobileNumberLength'),
+                        .isLength({ min: 9, max: 13 }).withMessage('mobileNumberLength'),
                 ]
             }
-            case 'passWordUser': {
+            case 'vereficationCode': {
                 return [
-                    check('old_password').exists().withMessage('requiredField').isString().withMessage('stringField')
-                        .isLength({ min: 5, max: 20 })
-                        .withMessage('passwordLength'),
-                    check('password').exists().withMessage('requiredField').isString().withMessage('stringField')
-                        .isLength({ min: 5, max: 20 })
-                        .withMessage('passwordLength'),
-                    check('pass_confirm').exists().withMessage('requiredField').isString().withMessage('stringField')
-                        .isLength({ min: 5, max: 20 })
-                        .withMessage('passwordLength'),
+                    check('verificationCode')
+                        .exists().withMessage('vereficationCodeRequired')
+                        .isString().withMessage('vereficationCodeString')
+                        .isLength({ min: 4, max: 4 }).withMessage('vereficationCodeLength'),
                 ]
+            }
+            case 'signUp': {
+                return [
+                    check('password')
+                    .exists().withMessage('passwordRequiredField')
+                    .isString().withMessage('passwordStringField')
+                    .isLength({ min: 6, max: 30 }).withMessage('passwordLength'),
+                ]
+            }
+            case 'auth': {
+                return [
+                    check('password')
+                    .exists().withMessage('passwordRequiredField')
+                    .isString().withMessage('passwordStringField')
+                    .isLength({ min: 6, max: 30 }).withMessage('passwordLength'),
+                    check('mobileNumber')
+                    .exists().withMessage('mobileNumberRequired')
+                    .isString().withMessage('mobileNumbeString')
+                    .isLength({ min: 9, max: 13 }).withMessage('mobileNumberLength'),
+                    ]
             }
         }
     }
