@@ -16,7 +16,7 @@ const translateMessages = (status, errObj, req) => {
 module.exports.procErr = (req, res, next) => {
     const validationErrors = validationResult(req)
     if (!validationErrors.isEmpty()) {
-        return res.status(200).send(translateMessages(400, validationErrors.mapped(), req))
+        return res.status(400).send(translateMessages(400, validationErrors.mapped(), req))
     } else {
         next()
     }
