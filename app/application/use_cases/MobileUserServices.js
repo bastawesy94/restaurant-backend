@@ -50,9 +50,9 @@ module.exports = class {
                         const mobileUser = new MobileUser(mobileNumber ,encryptedPassword);
                         return this.mobileUserRepository.addPasswordtoCurrentMobileUser(mobileUser)
                     },
-                    (error)=> {
-                        console.log(error)
-                        return error;
-                    });
+                (error)=> {
+                  console.log(error)
+                  return error;
+                });
         }
 }

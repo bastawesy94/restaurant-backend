@@ -3,15 +3,14 @@ const { Model } = require('sequelize');
 module.exports = (sequelize, DataTypes) => {
   class MobileUser extends Model {
     static associate(models) {
+    //   MobileUser.hasMany(models.ReviewModel, {
+    //   foreignKey: 'review_id',
+    //   onDelete: 'CASCADE',
+    //   onUpdate: 'CASCADE'
+    //  });
     }
   };
   MobileUser.init({
-    id : {
-      primaryKey : true ,
-      autoIncrement : true ,
-      type : DataTypes.INTEGER ,
-      allowNull : false ,
-    } ,
     mobileNumber: {
       type : DataTypes.STRING,
       allowNull : false ,
@@ -21,19 +20,9 @@ module.exports = (sequelize, DataTypes) => {
       type : DataTypes.STRING,
       allowNull : true ,
       unique : true ,
-    },
-    createdAt: {
-      allowNull: false,
-      type: DataTypes.DATE
-    },
-    updatedAt: {
-      allowNull: false,
-      type: DataTypes.DATE
     }
   }, {
     sequelize,
-    freezeTableName: true,
-    tableName: 'mobile_user',
     modelName: 'MobileUser',
   });
   return MobileUser;

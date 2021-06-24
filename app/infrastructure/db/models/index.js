@@ -25,6 +25,11 @@ Object.keys(db).forEach(modelName => {
 });
 //models .
 db.userModel = require('./MobileUser')(sequelize , Sequelize)
+db.categoryModel = require('./Category')(sequelize , Sequelize)
+db.categoryServiceModel = require('./CategoryService')(sequelize , Sequelize)
+db.companyModel = require('./Company')(sequelize , Sequelize)
+db.poductModel = require('./Product')(sequelize , Sequelize)
+db.reviewModel = require('./Review')(sequelize , Sequelize)
 
 db.sequelize = sequelize;
 db.Sequelize = Sequelize;

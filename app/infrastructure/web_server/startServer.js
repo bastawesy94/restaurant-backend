@@ -2,6 +2,7 @@ const express = require('express')
 const createLocaleMiddleware = require('express-locale')
 const {startPolyglot} = require ('../../interfaces/middleware/determinLnaguage')
 const mobileUserRouters = require('../../interfaces/routes/mobileUser')
+const categoryRouters = require('../../interfaces/routes/category')
 const DatabaseService = require('../db/databaseService/database')
 const WebServerService = require('./WebServerService')
 require('dotenv/config')
@@ -16,6 +17,7 @@ module.exports =()=>{
     app.use(startPolyglot)
     app.use(express.json());
     app.use('/api' , mobileUserRouters);
+    app.use('/api' , categoryRouters);
     DatabaseService.testConnection(sequelize)
     app.listen(PORT,()=>{console.log(`${serverType} Server Running on ${PORT} !`)});
 }
