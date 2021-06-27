@@ -42,7 +42,7 @@ const registerContainer = (otherServices = null) => {
           mobileUserControllers: asClass(MobileUserControllers),
           categoryControllers: asClass(CategoryControllers),
           categoryServiceControllers: asClass(CategoryServiceControllers),
-        //   companyControllers: asClass(CompanyControllers),
+          companyControllers: asClass(CompanyControllers),
         //   productControllers: asClass(ProductControllers),
         //   orderControllers: asClass(OrderControllers),
         //   reviewControllers: asClass(ReviewControllers),

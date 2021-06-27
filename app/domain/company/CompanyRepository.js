@@ -10,12 +10,6 @@ module.exports = class{
     removeCompany(companyId){
         throw new Error('ERROR_METHOD_NOT_EMPLEMENTED')
     }
-    findAllCompanies(){
-        throw new Error('ERROR_METHOD_NOT_EMPLEMENTED')
-    }
-    findCompany(){
-        throw new Error('ERROR_METHOD_NOT_EMPLEMENTED')
-    }
     updateCompany(companyId){
         throw new Error('ERROR_METHOD_NOT_EMPLEMENTED')
     }

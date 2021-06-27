@@ -21,7 +21,8 @@ const messages = {
         'verifySuccess': 'verefication process is done.',
         'verifyfaild': 'verefication is faild , please try again.',
         'authFaild':'please retry and make sure that your password & mobile number are valid and registered.',
-        'categoryDetails': 'all categories'
+        'categoryDetails': 'all categories',
+        'productDetails': 'all products'
     },
     ar: {
         'mobileNumberRequired': 'يجب إدخال رقم الموبايل لتسجيل الحساب.',
@@ -45,6 +46,7 @@ const messages = {
         'verifyfaild': 'فشل عملية التحقق , قم بأعادة المحاوله .',
         'authFaild':'من فضلك قم بإعادة المحاولة علي ان يتم التأكد من صحة الرقم وكلمة المرور.',
         'categoryDetails': 'تم إسترجاع جميع الخدمات',
+        'productDetails': 'تم استرجاع جميع المنتجات .'
     }
 }
 module.exports = {

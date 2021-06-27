@@ -1,10 +1,15 @@
 module.exports = class{
     constructor({companyRepository}){
         this.companyRepository = companyRepository
-        this.getAllcompanies= this.getAllcompanies.bind(this)
+        this.getAllCompanies= this.getAllCompanies.bind(this)
+        this.getAllCompaniesByCategoryServiceId= this.getAllCompaniesByCategoryServiceId.bind(this)
     }
 
-    getAllcompanies(){
-        return this.companyRepository.getAllcompanies()
+    getAllCompanies(){
+        return this.companyRepository.getAllCompanies()
+    }
+
+    getAllCompaniesByCategoryServiceId(categoryServiceId){
+        return this.companyRepository.getAllCompaniesByCategoryServiceId(categoryServiceId)
     }
 }

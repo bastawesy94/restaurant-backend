@@ -8,11 +8,15 @@ module.exports = {
         primaryKey: true,
         type: Sequelize.INTEGER
       },
+      category_service_id: {
+        type: Sequelize.INTEGER,
+        references: {
+          model: 'category_service',
+          key: 'id'
+         }
+       },
       name: {
         type: Sequelize.STRING
-      },
-      company_id: {
-        type: Sequelize.INTEGER
       },
       createdAt: {
         allowNull: false,

@@ -5,7 +5,9 @@ const {
 module.exports = (sequelize, DataTypes) => {
   class Company extends Model {
     static associate(models) {
-    //   Company.belongsTo(models.CategoryService)
+      Company.belongsTo(models.CategoryService,{
+        foreignKey: 'category_service_id'
+      })
     //   Company.hasMany(models.Product, {
     //   foreignKey: 'product_id',
     //   onDelete: 'CASCADE',
@@ -19,6 +21,7 @@ module.exports = (sequelize, DataTypes) => {
     }
   };
   Company.init({
+    category_service_id: DataTypes.INTEGER,
     name: DataTypes.STRING
   }, {
     sequelize,
