@@ -5,7 +5,7 @@ const {
 module.exports = (sequelize, DataTypes) => {
   class Product extends Model {
     static associate(models) {
-      // Product.belongsTo(models.CompanyModel)
+      // Product.belongsTo(models.Company)
     }
   };
   Product.init({
@@ -13,6 +13,8 @@ module.exports = (sequelize, DataTypes) => {
   }, {
     sequelize,
     modelName: 'Product',
+    freezeTableName: true,
+    tableName: 'product'
   });
   return Product;
 };

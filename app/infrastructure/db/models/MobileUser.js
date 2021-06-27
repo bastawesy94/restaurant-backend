@@ -3,7 +3,7 @@ const { Model } = require('sequelize');
 module.exports = (sequelize, DataTypes) => {
   class MobileUser extends Model {
     static associate(models) {
-    //   MobileUser.hasMany(models.ReviewModel, {
+    //   MobileUser.hasMany(models.Review, {
     //   foreignKey: 'review_id',
     //   onDelete: 'CASCADE',
     //   onUpdate: 'CASCADE'
@@ -24,6 +24,8 @@ module.exports = (sequelize, DataTypes) => {
   }, {
     sequelize,
     modelName: 'MobileUser',
+    freezeTableName: true,
+    tableName: 'mobile_user'
   });
   return MobileUser;
 };

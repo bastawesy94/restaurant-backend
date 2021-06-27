@@ -5,11 +5,9 @@ const {
 module.exports = (sequelize, DataTypes) => {
   class Category extends Model {
     static associate(models) {
-    //   Category.hasMany(models.CategoryServiceModel, {
-    //   foreignKey: 'category_id',
-    //   onDelete: 'CASCADE',
-    //   onUpdate: 'CASCADE'
-    //  })
+      Category.hasMany(models.CategoryService,{
+          foreignKey: 'category_id'
+        })//here
     }
   };
   Category.init({

@@ -8,11 +8,17 @@ module.exports = {
         primaryKey: true,
         type: Sequelize.INTEGER
       },
+      category_id: {
+        type: Sequelize.INTEGER,
+        references: {
+          model: 'category',
+          key: 'id'
+      },
+      onUpdate: 'cascade',
+      onDelete: 'cascade'
+      },
       name: {
         type: Sequelize.STRING
-      },
-      category_id: {
-        type: Sequelize.INTEGER
       },
       createdAt: {
         allowNull: false,

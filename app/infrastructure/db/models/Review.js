@@ -5,8 +5,8 @@ const {
 module.exports = (sequelize, DataTypes) => {
   class Review extends Model {
     static associate(models) {
-      // Review.belongsTo(models.CompanyModel)
-      // Review.belongsTo(models.UserModel)
+      // Review.belongsTo(models.Company)
+      // Review.belongsTo(models.MobileUser)
     }
   };
   Review.init({
@@ -16,6 +16,8 @@ module.exports = (sequelize, DataTypes) => {
   , {
     sequelize,
     modelName: 'Review',
+    freezeTableName: true,
+    tableName: 'review'
   });
   return Review;
 };

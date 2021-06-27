@@ -5,13 +5,13 @@ const {
 module.exports = (sequelize, DataTypes) => {
   class Company extends Model {
     static associate(models) {
-      // Company.belongsTo(models.CategoryServiceModel)
-    //   Company.hasMany(models.ProductModel, {
+    //   Company.belongsTo(models.CategoryService)
+    //   Company.hasMany(models.Product, {
     //   foreignKey: 'product_id',
     //   onDelete: 'CASCADE',
     //   onUpdate: 'CASCADE'
     //  });
-    //  Company.hasMany(models.ReviewModel, {
+    //  Company.hasMany(models.Review, {
     //   foreignKey: 'review_id',
     //   onDelete: 'CASCADE',
     //   onUpdate: 'CASCADE'
@@ -23,6 +23,8 @@ module.exports = (sequelize, DataTypes) => {
   }, {
     sequelize,
     modelName: 'Company',
+    freezeTableName: true,
+    tableName: 'company'
   });
   return Company;
 };
