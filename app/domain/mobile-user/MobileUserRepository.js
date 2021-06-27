@@ -10,12 +10,6 @@ module.exports = class{
     removeUser(userId){
         throw new Error('ERROR_METHOD_NOT_EMPLEMENTED')
     }
-    findAllUsers(){
-        throw new Error('ERROR_METHOD_NOT_EMPLEMENTED')
-    }
-    findUser(){
-        throw new Error('ERROR_METHOD_NOT_EMPLEMENTED')
-    }
     updateUser(userId){
         throw new Error('ERROR_METHOD_NOT_EMPLEMENTED')
     }

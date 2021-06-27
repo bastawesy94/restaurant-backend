@@ -20,7 +20,8 @@ const messages = {
         'usersDetails':'users details retrieved successfully.',
         'verifySuccess': 'verefication process is done.',
         'verifyfaild': 'verefication is faild , please try again.',
-        'authFaild':'please retry and make sure that your password & mobile number are valid and registered.'
+        'authFaild':'please retry and make sure that your password & mobile number are valid and registered.',
+        'categoryDetails': 'all categories'
     },
     ar: {
         'mobileNumberRequired': 'يجب إدخال رقم الموبايل لتسجيل الحساب.',
@@ -42,7 +43,8 @@ const messages = {
         'usersDetails':'تمت عملية استرجاع المستخدمين بنجاح.',
         'verifySuccess': 'تمت عملية التحقيق من المستخدم بنجاح.',
         'verifyfaild': 'فشل عملية التحقق , قم بأعادة المحاوله .',
-        'authFaild':'من فضلك قم بإعادة المحاولة علي ان يتم التأكد من صحة الرقم وكلمة المرور.'
+        'authFaild':'من فضلك قم بإعادة المحاولة علي ان يتم التأكد من صحة الرقم وكلمة المرور.',
+        'categoryDetails': 'تم إسترجاع جميع الخدمات',
     }
 }
 module.exports = {

@@ -7,4 +7,8 @@ module.exports = class{
     getAllCategoryServices(){
         return this.categoryServiceRepository.getAllCategoryServices()
     }
+
+    getAllCategoryServicesByCategoryId(categoryId){
+        return this.categoryServiceRepository.getAllCategoryServicesByCategoryId(categoryId)
+    }
 }

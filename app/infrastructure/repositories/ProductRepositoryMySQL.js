@@ -7,10 +7,10 @@ module.exports = class extends ProductRepo{
    }
 
     getAllProducts(){
-        return this.db.productyModel.findAll()
+        return this.db.Product.findAll()
     }
 
     createProduct(product){
-        return this.db.productModel.create(product)
+        return this.db.Product.create(product)
     }
 }

@@ -10,12 +10,6 @@ module.exports = class{
     removeReview(reviewId){
         throw new Error('ERROR_METHOD_NOT_EMPLEMENTED')
     }
-    findAllReviews(){
-        throw new Error('ERROR_METHOD_NOT_EMPLEMENTED')
-    }
-    findReview(){
-        throw new Error('ERROR_METHOD_NOT_EMPLEMENTED')
-    }
     updateReview(reviewId){
         throw new Error('ERROR_METHOD_NOT_EMPLEMENTED')
     }

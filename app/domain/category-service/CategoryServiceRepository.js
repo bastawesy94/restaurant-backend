@@ -10,12 +10,6 @@ module.exports = class{
     removeCategoryService(categoryServiceId){
         throw new Error('ERROR_METHOD_NOT_EMPLEMENTED')
     }
-    findAllCategoryServices(){
-        throw new Error('ERROR_METHOD_NOT_EMPLEMENTED')
-    }
-    findCategoryService(){
-        throw new Error('ERROR_METHOD_NOT_EMPLEMENTED')
-    }
     updateCategoryService(categoryServiceId){
         throw new Error('ERROR_METHOD_NOT_EMPLEMENTED')
     }

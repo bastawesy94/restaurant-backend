@@ -2,7 +2,7 @@ const { createContainer, asClass, asValue, asFunction } = require('awilix');
 
 const MobileUserServices = require('../../../application/use_cases/MobileUserServices')
 const CategoryServices = require('../../../application/use_cases/CategoryServices')
-const CateoryServiceServices= require('../../../application/use_cases/CateoryServiceServices')
+const CategoryServiceServices= require('../../../application/use_cases/CategoryServiceServices')
 const CompanyServices= require('../../../application/use_cases/CompanyServices')
 const ProductServices= require('../../../application/use_cases/ProductServices')
 const OrderServices= require('../../../application/use_cases/OrderServices')
@@ -32,7 +32,7 @@ const registerContainer = (otherServices = null) => {
           //services 
            mobileUserServices : asClass(MobileUserServices),
            categoryServices : asClass(CategoryServices),
-           cateoryServiceServices : asClass(CateoryServiceServices),
+           categoryServiceServices : asClass(CategoryServiceServices),
            companyServices : asClass(CompanyServices),
            productServices : asClass(ProductServices),
            orderServices : asClass(OrderServices),
@@ -41,7 +41,7 @@ const registerContainer = (otherServices = null) => {
           //controllers
           mobileUserControllers: asClass(MobileUserControllers),
           categoryControllers: asClass(CategoryControllers),
-        //   categoryServiceControllers: asClass(CategoryServiceControllers),
+          categoryServiceControllers: asClass(CategoryServiceControllers),
         //   companyControllers: asClass(CompanyControllers),
         //   productControllers: asClass(ProductControllers),
         //   orderControllers: asClass(OrderControllers),

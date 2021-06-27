@@ -7,10 +7,18 @@ module.exports = class extends CategoryServiceRepo{
    }
 
     getAllCategoryServices(){
-        return this.db.categoryServiceModel.findAll()
+        return this.db.CategoryService.findAll()
+    }
+
+    getAllCategoryServicesByCategoryId(categoryId){
+        return this.db.CategoryService.findAll({
+            where :{
+                category_id: categoryId
+            }
+        })
     }
 
     createCategoryService(categoryService){
-        return this.db.categoryServiceModel.create(categoryService)
+        return this.db.CategoryService.create(categoryService)
     }
 }

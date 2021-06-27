@@ -7,30 +7,24 @@ module.exports = class extends UserRepo{
    }
 
     getAllMobileUsers(){
-        return this.db.userModel.findAll()
+        return this.db.MobileUser.findAll()
     }
 
     createMobileUser(user){
-        return this.db.userModel.create(user)
+        return this.db.MobileUser.create(user)
     }
 
     findMobileUserByMobileNumber(mobileNumber){
-        return this.db.userModel.findOne({
-            where :{
-                mobileNumber : mobileNumber
-            }  
+        return this.db.MobileUser.findOne({
+            where: {mobileNumber : mobileNumber}  
         })
     }
 
     addPasswordtoCurrentMobileUser(user){
-        return this.db.userModel.update(
-            {
-                password : user.password
-            },
-            {
-            where :{
-                 mobileNumber : user.mobileNumber
-            }  
+        return this.db.MobileUser.update(
+        {password : user.password},
+        {
+        where :{mobileNumber : user.mobileNumber}  
         })
     }
 }

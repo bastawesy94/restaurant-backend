@@ -10,12 +10,6 @@ module.exports = class{
     removeProduct(productId){
         throw new Error('ERROR_METHOD_NOT_EMPLEMENTED')
     }
-    findAllProducts(){
-        throw new Error('ERROR_METHOD_NOT_EMPLEMENTED')
-    }
-    findProduct(){
-        throw new Error('ERROR_METHOD_NOT_EMPLEMENTED')
-    }
     updateProduct(productId){
         throw new Error('ERROR_METHOD_NOT_EMPLEMENTED')
     }

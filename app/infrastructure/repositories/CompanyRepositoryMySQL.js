@@ -7,10 +7,10 @@ module.exports = class extends CompanyRepo{
    }
 
     getAllCompanies(){
-        return this.db.companyModel.findAll()
+        return this.db.Company.findAll()
     }
 
     createCompany(company){
-        return this.db.companyModel.create(company)
+        return this.db.Company.create(company)
     }
 }

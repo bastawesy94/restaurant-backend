@@ -7,10 +7,10 @@ module.exports = class extends ReviewRepo{
    }
 
     getAllReviews(){
-        return this.db.reviewModel.findAll()
+        return this.db.Review.findAll()
     }
 
     createReview(review){
-        return this.db.reviewModel.create(review)
+        return this.db.Review.create(review)
     }
 }

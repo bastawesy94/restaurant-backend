@@ -7,13 +7,10 @@ module.exports = class extends CategoryRepo{
    }
 
     getAllCategories(){
-        return this.db.Category.findAll({
-				include: {model: this.db.CategoryService}
-			}
-        )
+        return this.db.Category.findAll()
     }
 
     createCategory(category){
-        return this.db.categoryModel.create(category)
+        return this.db.Category.create(category)
     }
 }

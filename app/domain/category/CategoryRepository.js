@@ -10,12 +10,6 @@ module.exports = class{
     removeCategory(categoryId){
         throw new Error('ERROR_METHOD_NOT_EMPLEMENTED')
     }
-    findAllCategories(){
-        throw new Error('ERROR_METHOD_NOT_EMPLEMENTED')
-    }
-    findCategory(){
-        throw new Error('ERROR_METHOD_NOT_EMPLEMENTED')
-    }
     updateCategory(categoryId){
         throw new Error('ERROR_METHOD_NOT_EMPLEMENTED')
     }
