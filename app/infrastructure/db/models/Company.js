@@ -8,16 +8,15 @@ module.exports = (sequelize, DataTypes) => {
       Company.belongsTo(models.CategoryService,{
         foreignKey: 'category_service_id'
       })
-    //   Company.hasMany(models.Product, {
-    //   foreignKey: 'product_id',
-    //   onDelete: 'CASCADE',
-    //   onUpdate: 'CASCADE'
-    //  });
-    //  Company.hasMany(models.Review, {
-    //   foreignKey: 'review_id',
-    //   onDelete: 'CASCADE',
-    //   onUpdate: 'CASCADE'
-    //  });
+      Company.hasMany(models.Product, {
+        foreignKey: 'company_id'
+      });
+     Company.hasMany(models.Review, {
+      foreignKey: 'company_id',
+     });
+     Company.hasMany(models.Order, {
+      foreignKey: 'company_id',
+     });
     }
   };
   Company.init({

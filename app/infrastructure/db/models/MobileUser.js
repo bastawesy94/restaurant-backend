@@ -3,11 +3,12 @@ const { Model } = require('sequelize');
 module.exports = (sequelize, DataTypes) => {
   class MobileUser extends Model {
     static associate(models) {
-    //   MobileUser.hasMany(models.Review, {
-    //   foreignKey: 'review_id',
-    //   onDelete: 'CASCADE',
-    //   onUpdate: 'CASCADE'
-    //  });
+      MobileUser.hasMany(models.Review, {
+      foreignKey: 'mobile_user_id',
+     });
+    MobileUser.hasMany(models.Order, {
+      foreignKey: 'mobile_user_id',
+     });
     }
   };
   MobileUser.init({

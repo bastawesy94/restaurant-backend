@@ -43,9 +43,9 @@ const registerContainer = (otherServices = null) => {
           categoryControllers: asClass(CategoryControllers),
           categoryServiceControllers: asClass(CategoryServiceControllers),
           companyControllers: asClass(CompanyControllers),
-        //   productControllers: asClass(ProductControllers),
-        //   orderControllers: asClass(OrderControllers),
-        //   reviewControllers: asClass(ReviewControllers),
+          productControllers: asClass(ProductControllers),
+          reviewControllers: asClass(ReviewControllers),
+          //   orderControllers: asClass(OrderControllers),
 
           //repositories
           mobileUserRepository: asClass(MobileUserRepository),

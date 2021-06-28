@@ -13,4 +13,10 @@ module.exports = class extends ProductRepo{
     createProduct(product){
         return this.db.Product.create(product)
     }
+
+    getAllProductsByCompanyId(companyId){
+        return this.db.Product.findAll({
+            where:{company_id: companyId}
+        })
+    }
 }

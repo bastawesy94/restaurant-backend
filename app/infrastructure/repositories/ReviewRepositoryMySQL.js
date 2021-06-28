@@ -13,4 +13,10 @@ module.exports = class extends ReviewRepo{
     createReview(review){
         return this.db.Review.create(review)
     }
+
+    getAllReviewsByCompanyId(companyId){
+        return this.db.Review.findAll({
+            where:{company_id: companyId}
+        })
+    }
 }

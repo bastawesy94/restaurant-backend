@@ -8,11 +8,15 @@ module.exports = {
         primaryKey: true,
         type: Sequelize.INTEGER
       },
+      company_id: {
+        type: Sequelize.INTEGER,
+        references: {
+          model: 'company',
+          key: 'id'
+         }
+       },
       cost: {
         type: Sequelize.DOUBLE
-      },
-       company_id: {
-        type: Sequelize.INTEGER
       },
       createdAt: {
         allowNull: false,
