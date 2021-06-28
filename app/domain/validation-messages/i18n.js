@@ -23,7 +23,10 @@ const messages = {
         'authFaild':'please retry and make sure that your password & mobile number are valid and registered.',
         'categoryDetails': 'all categories',
         'productDetails': 'all products',
-        'reviewDetails': 'all reviews of company'
+        'reviewDetails': 'all reviews of company',
+        'orderDetails': 'all orders',
+        'orderCreated': 'order is created , please wait for company response.'
+
     },
     ar: {
         'mobileNumberRequired': 'يجب إدخال رقم الموبايل لتسجيل الحساب.',
@@ -48,7 +51,9 @@ const messages = {
         'authFaild':'من فضلك قم بإعادة المحاولة علي ان يتم التأكد من صحة الرقم وكلمة المرور.',
         'categoryDetails': 'تم إسترجاع جميع الخدمات',
         'productDetails': 'تم استرجاع جميع المنتجات .',
-        'reviewDetails': 'تك استرجاع جميع الأراء عن تلك الشركة.'
+        'reviewDetails': 'تك استرجاع جميع الأراء عن تلك الشركة.',
+        'orderDetails': 'تم استرجاع جميع الطلبات',
+        'orderCreated': 'تمت عملية الطلب بنجاح , من فضلك انتظر حتي وصول رد الشركه.'
 
     }
 }

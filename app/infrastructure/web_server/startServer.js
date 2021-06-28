@@ -7,6 +7,8 @@ const categoryServiceRouters= require('../../interfaces/routes/categoryService')
 const companyRouters= require('../../interfaces/routes/company')
 const productRouters=  require('../../interfaces/routes/product')
 const reviewRouters= require('../../interfaces/routes/review')
+const orderRouters= require('../../interfaces/routes/order')
+
 const DatabaseService = require('../db/databaseService/database')
 const WebServerService = require('./WebServerService')
 require('dotenv/config')
@@ -26,6 +28,7 @@ module.exports =()=>{
     app.use('/api' , companyRouters);
     app.use('/api' , productRouters);
     app.use('/api' , reviewRouters);
+    app.use('/api' , orderRouters);
 
     DatabaseService.testConnection(sequelize)
     app.listen(PORT,()=>{console.log(`${serverType} Server Running on ${PORT} !`)});
