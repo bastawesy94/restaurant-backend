@@ -19,4 +19,10 @@ module.exports = class extends CompanyRepo{
             where:{category_service_id: categoryServiceId}
         })
     }
+
+    getAllCompaniesByCategoryServiceIds(categoryServiceIds){
+        return this.db.Company.findAll({
+            where:{category_service_id: categoryServiceIds}
+        })
+    }
 }

@@ -12,4 +12,9 @@ module.exports = class{
     getAllCompaniesByCategoryServiceId(categoryServiceId){
         return this.companyRepository.getAllCompaniesByCategoryServiceId(categoryServiceId)
     }
+
+    getAllCompaniesByCategoryServiceIds(categoryServiceIds){
+        return this.companyRepository.getAllCompaniesByCategoryServiceIds(categoryServiceIds)
+    }
+
 }

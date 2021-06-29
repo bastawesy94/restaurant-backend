@@ -3,7 +3,6 @@ module.exports= class{
         this.text= text
         this.companyId= companyId
         this.stars= stars
-        this.quantity= quantity
     }
     getText(){
         return this.text

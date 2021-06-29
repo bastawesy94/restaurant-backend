@@ -1,10 +1,12 @@
 const Response = require('../serializers/ResponseFormate')
 
 module.exports = class{
-    constructor({companyServices}){
+    constructor({companyServices ,categoryServiceServices}){
         this.companyServices = companyServices
+        this.categoryServiceServices = categoryServiceServices
         this.getAllCompanies= this.getAllCompanies.bind(this)
         this.getAllCompaniesByCategoryServiceId= this.getAllCompaniesByCategoryServiceId.bind(this)
+        this.getAllCompaniesByCategoryId= this.getAllCompaniesByCategoryId.bind(this)
     }
     
     async getAllCompanies(req , res){
@@ -31,7 +33,28 @@ module.exports = class{
         catch(error){
             console.log(error)
             return res.status(500).json(Response.format(500,req.polyglot.t('serverError'),error.message))
+        }   
+    }
+
+    async getAllCompaniesByCategoryId(req , res){
+        try{
+            const {categoryId}= req.body
+            let serviceIds= []
+            const services= await this.categoryServiceServices
+                        .getAllCategoryServicesByCategoryId(categoryId)
+            for(let serviceIndex in services)
+                serviceIds.push(services[serviceIndex].id)
+            if(serviceIds.length === 0)
+                   return res.status(200).json(Response.format(200,req.polyglot.t('emptyrResponse')))    
+            const result= await this.companyServices
+                        .getAllCompaniesByCategoryServiceIds(serviceIds)
+            if(result.length == 0)
+               return res.status(200).json(Response.format(200,req.polyglot.t('emptyrResponse'),result))
+            return res.status(200).json(Response.format(200,req.polyglot.t('categoryDetails'),result))
         }
-        
+        catch(error){
+            console.log(error)
+            return res.status(500).json(Response.format(500,req.polyglot.t('serverError'),error.message))
+        }   
     }
 }
