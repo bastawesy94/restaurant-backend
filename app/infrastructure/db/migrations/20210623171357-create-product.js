@@ -15,6 +15,12 @@ module.exports = {
           key: 'id'
          }
        },
+      name: {
+        type: Sequelize.STRING
+      },
+      quantity: {
+        type: Sequelize.INTEGER
+      },
       cost: {
         type: Sequelize.DOUBLE
       },
