@@ -8,13 +8,7 @@ module.exports = class extends CompanyRepo{
    }
 
     getAllCompanies(){
-        // return this.db.Company.findAll(
-            const id = '1'
-            return this.db.sequelize.query('SELECT company.name , AVG(stars) as rating FROM company  , review where company.id =review.id and category_service_id = $1 GROUP BY company.name',{
-                bind: [id],
-                model: this.db.Company,
-                type: QueryTypes.SELECT
-            })
+        return this.db.Company.findAll()
     }
 
     createCompany(company){
@@ -22,17 +16,31 @@ module.exports = class extends CompanyRepo{
     }
 
     getAllCompaniesByCategoryServiceId(categoryServiceId){
-        return this.db.Company.findAll({
-            where:{category_service_id: categoryServiceId},
-            include: {
-                model: this.db.Review,
-            },
-        })
+            return this.db.sequelize.query('SELECT company.name , AVG(review.stars) as rating FROM company INNER JOIN review ON review.company_id = company.id WHERE company.category_service_id= $1 GROUP BY company.name',{
+                bind: [categoryServiceId],
+                model: this.db.Company,
+                type: QueryTypes.SELECT
+            })
     }
 
     getAllCompaniesByCategoryServiceIds(categoryServiceIds){
-        return this.db.Company.find1All({
+        return this.db.Company.findAll({
             where:{category_service_id: categoryServiceIds}
         })
+    }
+
+    getAllCompaniesWithRatesByCategoryId(categoryId){
+        return this.db.sequelize.query('SELECT company.name , AVG(review.stars) as rating FROM company INNER JOIN review ON review.company_id = company.id INNER JOIN category_service ON company.category_Service_id = category_service.id WHERE category_service.category_id=$1 GROUP BY company.name',{
+            bind: [categoryId],
+            model: this.db.Company,
+            type: QueryTypes.SELECT
+        })
+    }
+
+    getAllCompaniesWithRate(){
+            return this.db.sequelize.query('SELECT company.name , AVG(review.stars) as rating FROM company INNER JOIN review ON review.company_id = company.id GROUP BY company.name',{
+                model: this.db.Company,
+                type: QueryTypes.SELECT
+            })
     }
 }

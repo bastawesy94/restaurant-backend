@@ -23,6 +23,7 @@ const messages = {
         'authFaild':'please retry and make sure that your password & mobile number are valid and registered.',
         'categoryDetails': 'all categories',
         'productDetails': 'all products',
+        'companyDetails': 'all companies',
         'reviewDetails': 'all reviews of company',
         'orderDetails': 'all orders',
         'orderCreated': 'order is created , please wait for company response.'
@@ -53,7 +54,9 @@ const messages = {
         'productDetails': 'تم استرجاع جميع المنتجات .',
         'reviewDetails': 'تك استرجاع جميع الأراء عن تلك الشركة.',
         'orderDetails': 'تم استرجاع جميع الطلبات',
-        'orderCreated': 'تمت عملية الطلب بنجاح , من فضلك انتظر حتي وصول رد الشركه.'
+        'orderCreated': 'تمت عملية الطلب بنجاح , من فضلك انتظر حتي وصول رد الشركه.',
+        'companyDetails': 'تم استرجاع جميع بيانات الشركات المطلوبه.',
+
 
     }
 }

@@ -21,7 +21,11 @@ module.exports = (sequelize, DataTypes) => {
   };
   Company.init({
     category_service_id: DataTypes.INTEGER,
-    name: DataTypes.STRING
+    name: DataTypes.STRING,
+    website: DataTypes.STRING,
+    email: DataTypes.STRING,
+    mobileNumber: DataTypes.STRING,
+    location: DataTypes.GEOMETRY('POINT')
   }, {
     sequelize,
     modelName: 'Company',

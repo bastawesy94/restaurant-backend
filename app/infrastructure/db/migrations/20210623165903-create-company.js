@@ -18,6 +18,18 @@ module.exports = {
       name: {
         type: Sequelize.STRING
       },
+      website: {
+        type: Sequelize.STRING
+      },
+      email: {
+        type: Sequelize.STRING
+      },
+      mobileNumber: {
+        type: Sequelize.STRING
+      },
+      Location: {
+        type: Sequelize.GEOMETRY('POINT')
+      },
       createdAt: {
         allowNull: false,
         type: Sequelize.DATE
