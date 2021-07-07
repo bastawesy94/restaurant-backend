@@ -1,18 +1,3 @@
-/* sample point location
-"location": {
-    "type": "Point",
-    "coordinates": [
-        40.71727401,
-        -74.00898606
-    ]
-}
-sample ORM query with sequalize
-var point = { type: 'Point', coordinates: [39.807222,-76.984722]};
-User.create({username: 'username', geometry: point }).then(function(newUser) {
-...
-});
-*/
-
 module.exports = class{
     constructor(type , coordinates){
         this.type= type
@@ -23,7 +8,7 @@ module.exports = class{
         this.type= type
     }
     getType(){
-        return this.coordinates
+        return this.type
     }
     setCoordinates(coordinates){
         this.coordinates= coordinates

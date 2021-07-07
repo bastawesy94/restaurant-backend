@@ -1,4 +1,5 @@
 const UserRepo = require('../../domain/mobile-user/MobileUserRepository')
+const { sequelize, QueryTypes } = require('sequelize');
 
 module.exports = class extends UserRepo{
    constructor({db}){
@@ -26,5 +27,14 @@ module.exports = class extends UserRepo{
         {
         where :{mobileNumber : user.mobileNumber}  
         })
+    }
+
+    saveMobileUserLocationPoint(location ,mobileUserId){
+        // const line = { type: 'Point', 'coordinates': [100.0, 0.0] };
+        return this.db.MobileUser.update(
+            {location : location},
+            {
+            where :{id : mobileUserId}  
+        }) 
     }
 }

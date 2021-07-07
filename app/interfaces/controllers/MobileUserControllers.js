@@ -8,6 +8,7 @@ module.exports = class{
         this.auth = this.auth.bind(this)
         this.createMobileUser = this.createMobileUser.bind(this)
         this.signUp = this.signUp.bind(this)
+        this.saveMobileUserLocationPoint= this.saveMobileUserLocationPoint.bind(this)
     }
 
     async signUp(req , res){
@@ -82,6 +83,20 @@ module.exports = class{
                         'mobile-user-token' : result,
                        }))
             return res.status(400).json(Response.format(400,req.polyglot.t('addNumberError'), result.message))
+        }
+        catch(error){
+            console.log(error)
+            return res.status(500).json(Response.format(500,req.polyglot.t('serverError'),error.message))
+        }
+    }
+
+    async saveMobileUserLocationPoint(req, res){
+        try{
+            const {point , mobileUserId} = req.body
+            const result = await this.mobileUserServices.saveMobileUserLocationPoint(point, mobileUserId)
+            if(result[0] === 1)
+                return res.status(200).json(Response.format(200,req.polyglot.t('serverError'),result))
+            return res.status(200).json(Response.format(200,req.polyglot.t('locationAdded'),result))
         }
         catch(error){
             console.log(error)

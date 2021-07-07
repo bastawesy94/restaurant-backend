@@ -21,7 +21,9 @@ module.exports = (sequelize, DataTypes) => {
       type : DataTypes.STRING,
       allowNull : true ,
       unique : true ,
-    }
+    },
+    location: DataTypes.GEOMETRY('POINT')
+
   }, {
     sequelize,
     modelName: 'MobileUser',

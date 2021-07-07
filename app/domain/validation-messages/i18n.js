@@ -26,8 +26,9 @@ const messages = {
         'companyDetails': 'all companies',
         'reviewDetails': 'all reviews of company',
         'orderDetails': 'all orders',
-        'orderCreated': 'order is created , please wait for company response.'
-
+        'orderCreated': 'order is created , please wait for company response.',
+        'companyProfileDetails': 'Company Pfofile Details.',
+        'locationAdded': 'Location of User is Added.'
     },
     ar: {
         'mobileNumberRequired': 'يجب إدخال رقم الموبايل لتسجيل الحساب.',
@@ -56,6 +57,8 @@ const messages = {
         'orderDetails': 'تم استرجاع جميع الطلبات',
         'orderCreated': 'تمت عملية الطلب بنجاح , من فضلك انتظر حتي وصول رد الشركه.',
         'companyDetails': 'تم استرجاع جميع بيانات الشركات المطلوبه.',
+        'companyProfileDetails': 'تم استرجاع بيانات الشركه .',
+        'locationAdded': 'تم تسجيل موقع المستخدم بنجاح .'
 
 
     }

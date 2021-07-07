@@ -11,5 +11,6 @@ mobileUserRouters.post('/mobile-user/auth',MobileUserValidator.mobileUserValidat
 mobileUserRouters.post('/mobile-user/create-mobile-user', MobileUserValidator.mobileUserValidate('mobileNumber'),procErr,mobileUserControllers.createMobileUser)
 mobileUserRouters.post('/mobile-user/verify-mobile-user', MobileUserValidator.mobileUserValidate('vereficationCode') ,procErr,mobileUserControllers.verifyMobileUser)
 mobileUserRouters.get('/mobile-user/users',mobileUserControllers.getAllMobileUsers)
+mobileUserRouters.put('/mobile-user/add-location',mobileUserControllers.saveMobileUserLocationPoint)
 
 module.exports = mobileUserRouters

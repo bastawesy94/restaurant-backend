@@ -18,6 +18,7 @@ module.exports = {
         allowNull : true ,
         unique : true ,
       },
+      location: Sequelize.GEOMETRY('POINT'),
       createdAt: {
         allowNull: false,
         type: Sequelize.DATE

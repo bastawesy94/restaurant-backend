@@ -9,6 +9,7 @@ module.exports = class{
         this.getAllCompaniesByCategoryId= this.getAllCompaniesByCategoryId.bind(this)
         this.getAllCompaniesWithRate= this.getAllCompaniesWithRate.bind(this)
         this.getAllCompaniesWithRatesByCategoryId= this.getAllCompaniesWithRatesByCategoryId.bind(this)
+        this.getCompanyById= this.getCompanyById.bind(this)
     }
     
     async getAllCompanies(req , res){
@@ -16,7 +17,7 @@ module.exports = class{
             const result= await this.companyServices.getAllCompanies()
             if(result.length == 0)
                return res.status(200).json(Response.format(200,req.polyglot.t('emptyrResponse'),result))
-            return res.status(200).json(Response.format(200,req.polyglot.t('productDetails'),result))
+            return res.status(200).json(Response.format(200,req.polyglot.t('companyDetails'),result))
         }
         catch(error){
             console.log(error)
@@ -24,6 +25,20 @@ module.exports = class{
         }
         
     }
+
+    async getCompanyById(req, res){
+        try{
+            const result= await this.companyServices.getCompanyById(req.body.companyId)
+            if(result.length == 0)
+               return res.status(200).json(Response.format(200,req.polyglot.t('emptyrResponse'),result))
+            return res.status(200).json(Response.format(200,req.polyglot.t('companyProfileDetails'),result))
+        }
+        catch(error){
+            console.log(error)
+            return res.status(500).json(Response.format(500,req.polyglot.t('serverError'),error.message))
+        }
+    }
+
     async getAllCompaniesByCategoryServiceId(req , res){
         try{
             const result= await this.companyServices

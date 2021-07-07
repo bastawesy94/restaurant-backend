@@ -1,6 +1,7 @@
 const AccessTokenManager = require('../../infrastructure/security/AccessTokenManger')
 const bcrypt = require('bcrypt')
 const IntialMobileUser = require('../../domain/mobile-user/IntialMobileUser');
+const Point = require('../../domain/location-point/Point');
 const MobileUser = require('../../domain/mobile-user/MobileUser');
 const isValidSaudiMobileNumber = require('../utilities/isValidSaudiMobileNumber')
 module.exports = class {
@@ -11,6 +12,7 @@ module.exports = class {
                 this.mobieleUserAuth = this.mobieleUserAuth.bind(this)
                 this.saveMobileUserNumber = this.saveMobileUserNumber.bind(this)
                 this.signUpMobileUser = this.signUpMobileUser.bind(this)
+                this.saveMobileUserLocationPoint= this.saveMobileUserLocationPoint.bind(this)
         }
         async listMobileUsers(){
                 return await this.mobileUserRepository.getAllMobileUsers()
@@ -53,6 +55,13 @@ module.exports = class {
                 (error)=> {
                   console.log(error)
                   return error;
-                });
+                }); 
         }
+
+        async saveMobileUserLocationPoint(point ,mobileUserId){
+                const location = new Point('Point' , point)
+                return await this.mobileUserRepository.saveMobileUserLocationPoint(location,mobileUserId)
+
+        }
+
 }
