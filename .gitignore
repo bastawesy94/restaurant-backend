@@ -1,5 +1,5 @@
 # npm dependancies , to reduce uplodaed project .
-node_modules
+#node_modules
 
 # dotenv file , it holds sensetive data belongs to infrastructure .
 #.env
