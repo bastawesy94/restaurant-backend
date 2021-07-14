@@ -59,8 +59,6 @@ const messages = {
         'companyDetails': 'تم استرجاع جميع بيانات الشركات المطلوبه.',
         'companyProfileDetails': 'تم استرجاع بيانات الشركه .',
         'locationAdded': 'تم تسجيل موقع المستخدم بنجاح .'
-
-
     }
 }
 module.exports = {
