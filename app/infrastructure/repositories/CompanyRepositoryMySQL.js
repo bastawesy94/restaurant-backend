@@ -36,8 +36,8 @@ module.exports = class extends CompanyRepo{
     }
 
     getAllCompaniesWithRatesByCategoryId(categoryId){
-        return this.db.sequelize.query('SELECT company.name , AVG(review.stars) as rating FROM company INNER JOIN review ON review.company_id = company.id INNER JOIN category_service ON company.category_Service_id = category_service.id WHERE category_service.category_id=$1 GROUP BY company.name',{
-            bind: [categoryId],
+        return this.db.sequelize.query('SELECT company.name , AVG(review.stars) as rating FROM company INNER JOIN review ON review.company_id = company.id INNER JOIN category_service ON company.category_Service_id = category_service.id WHERE category_service.category_id=1 GROUP BY company.name',{
+            // bind: [categoryId],
             model: this.db.Company,
             type: QueryTypes.SELECT
         })
