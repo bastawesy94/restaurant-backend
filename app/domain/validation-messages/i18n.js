@@ -28,7 +28,9 @@ const messages = {
         'orderDetails': 'all orders',
         'orderCreated': 'order is created , please wait for company response.',
         'companyProfileDetails': 'Company Pfofile Details.',
-        'locationAdded': 'Location of User is Added.'
+        'locationAdded': 'Location of User is Added.',
+        'numberField': 'required field must be number.',
+        'requiredField': 'this feild is required.'
     },
     ar: {
         'mobileNumberRequired': 'يجب إدخال رقم الموبايل لتسجيل الحساب.',
@@ -58,7 +60,9 @@ const messages = {
         'orderCreated': 'تمت عملية الطلب بنجاح , من فضلك انتظر حتي وصول رد الشركه.',
         'companyDetails': 'تم استرجاع جميع بيانات الشركات المطلوبه.',
         'companyProfileDetails': 'تم استرجاع بيانات الشركه .',
-        'locationAdded': 'تم تسجيل موقع المستخدم بنجاح .'
+        'locationAdded': 'تم تسجيل موقع المستخدم بنجاح .',
+        'numberField': 'يجب أدخال قيمة رقمية .',
+        'requiredField': 'يجب ادخال قيمة في الخطوة السابقة.'
     }
 }
 module.exports = {
