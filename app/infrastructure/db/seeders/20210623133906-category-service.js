@@ -4,8 +4,9 @@ module.exports = {
       const categories = await queryInterface.sequelize.query(
       `SELECT id from category;`
     );
+    
     const categoryRows = categories[1];
-    console.log("adas : " + categoryRows)
+
     await queryInterface.bulkInsert('category_service', [
      {
       name: 'كراتين مياه',
