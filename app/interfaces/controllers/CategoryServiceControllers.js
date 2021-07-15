@@ -23,7 +23,7 @@ module.exports = class{
     async getAllCategoryServicesByCategoryId(req , res){
         try{
             const result= await this.categoryServiceServices
-                        .getAllCategoryServicesByCategoryId(req.body.categoryId)
+                        .getAllCategoryServicesByCategoryId(req.params.categoryId)
             if(result.length == 0)
                return res.status(200).json(Response.format(200,req.polyglot.t('emptyrResponse'),result))
             return res.status(200).json(Response.format(200,req.polyglot.t('categoryDetails'),result))

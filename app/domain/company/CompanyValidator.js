@@ -1,4 +1,4 @@
-const { check } = require('express-validator')
+const { check ,param } = require('express-validator')
 
 module.exports = class{
 
@@ -6,7 +6,7 @@ module.exports = class{
         switch (functionName) {
             case 'allByCategoryWithRates': {
                 return [
-                    check('categoryId').exists().withMessage('requiredField').isNumeric().withMessage('numberField'),
+                    param('cateoryId').exists().withMessage('requiredField').isNumeric().withMessage('numberField'),
                 ]
             }
         }

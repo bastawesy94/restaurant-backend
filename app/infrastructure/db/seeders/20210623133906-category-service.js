@@ -19,6 +19,24 @@ module.exports = {
       category_id:categoryRows[1].id,
       createdAt: new Date(),
       updatedAt: new Date()
+     },
+     {
+      name: 'خدمة الصرف الصحي',
+      category_id:categoryRows[0].id,
+      createdAt: new Date(),
+      updatedAt: new Date()
+     },
+     {
+      name:'يبيع وشراء الخزانات',
+      category_id:categoryRows[2].id,
+      createdAt: new Date(),
+      updatedAt: new Date()
+     },
+     {
+      name:'خدمة الصيانة',
+      category_id:categoryRows[3].id,
+      createdAt: new Date(),
+      updatedAt: new Date()
      }
      ], {});
   },

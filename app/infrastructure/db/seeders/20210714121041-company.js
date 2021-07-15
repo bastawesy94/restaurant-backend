@@ -12,7 +12,7 @@ module.exports = {
 
     await queryInterface.bulkInsert('company', 
     [{
-      category_service_id: serviceRows[1].id,
+      category_service_id: serviceRows[0].id,
       name: 'شركة 1',
       website: 'www.company1.com',
       email: 'company1@gmail.com',
@@ -22,7 +22,7 @@ module.exports = {
       updatedAt: new Date()
      },
      {
-      category_service_id: serviceRows[1].id,
+      category_service_id: serviceRows[0].id,
       name: 'شركة 2',
       website: 'www.company2.com',
       email: 'company2@gmail.com',
@@ -44,6 +44,46 @@ module.exports = {
      {
       category_service_id: serviceRows[1].id,
       name: 'شركة 4',
+      website: 'www.company4.com',
+      email: 'company4@gmail.com',
+      mobileNumber: '504094040404',
+      Location: Sequelize.fn('ST_GeomFromText', 'POINT(52.458415 16.904740)'),
+      createdAt: new Date(),
+      updatedAt: new Date()
+     },
+     {
+      category_service_id: serviceRows[1].id,
+      name: 'شركة 5',
+      website: 'www.company4.com',
+      email: 'company4@gmail.com',
+      mobileNumber: '504094040404',
+      Location: Sequelize.fn('ST_GeomFromText', 'POINT(52.458415 16.904740)'),
+      createdAt: new Date(),
+      updatedAt: new Date()
+     },
+     {
+      category_service_id: serviceRows[2].id,
+      name: 'شركة 6',
+      website: 'www.company4.com',
+      email: 'company4@gmail.com',
+      mobileNumber: '504094040404',
+      Location: Sequelize.fn('ST_GeomFromText', 'POINT(52.458415 16.904740)'),
+      createdAt: new Date(),
+      updatedAt: new Date()
+     },
+     {
+      category_service_id: serviceRows[2].id,
+      name: 'شركة 7',
+      website: 'www.company4.com',
+      email: 'company4@gmail.com',
+      mobileNumber: '504094040404',
+      Location: Sequelize.fn('ST_GeomFromText', 'POINT(52.458415 16.904740)'),
+      createdAt: new Date(),
+      updatedAt: new Date()
+     },
+     {
+      category_service_id: serviceRows[3].id,
+      name: 'شركة 8',
       website: 'www.company4.com',
       email: 'company4@gmail.com',
       mobileNumber: '504094040404',

@@ -11,7 +11,6 @@ companyRouters.get('/company/profile',companyControllers.getCompanyById)
 companyRouters.get('/company/company-services',companyControllers.getAllCompaniesByCategoryServiceId)
 companyRouters.get('/company/all-by-category',companyControllers.getAllCompaniesByCategoryId)
 companyRouters.get('/company/all-with-rates',companyControllers.getAllCompaniesWithRate)
-companyRouters.get('/company/all-by-category-with-rates/:id',companyControllers.getAllCompaniesWithRatesByCategoryId)
-// companyRouters.get('/company/all-by-category-with-rates/:id',CompanyValidator.mobileUserValidate('allByCategoryWithRates'),procErr,companyControllers.getAllCompaniesWithRatesByCategoryId)
+companyRouters.get('/company/all-by-category-with-rates/:cateoryId',CompanyValidator.mobileUserValidate('allByCategoryWithRates'),procErr,companyControllers.getAllCompaniesWithRatesByCategoryId)
 
 module.exports = companyRouters
