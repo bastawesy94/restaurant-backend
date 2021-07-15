@@ -6,13 +6,19 @@ module.exports = (sequelize, DataTypes) => {
   class Order extends Model {
     static associate(models) {
       Order.belongsTo(models.MobileUser,{
-        foreignKey: 'mobile_user_id'
+        foreignKey: 'mobile_user_id',
+        onDelete: 'cascade',
+        onUpdate: 'cascade'
       })
       Order.belongsTo(models.Product,{
-        foreignKey: 'product_id'
+        foreignKey: 'product_id',
+        onDelete: 'cascade',
+        onUpdate: 'cascade'
       })
       Order.belongsTo(models.Company,{
-        foreignKey: 'company_id'
+        foreignKey: 'company_id',
+        onDelete: 'cascade',
+        onUpdate: 'cascade'
       })
     }
   };

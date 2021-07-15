@@ -18,6 +18,9 @@ module.exports = {
       name: {
         type: Sequelize.STRING
       },
+      description: {
+        type: Sequelize.STRING
+      },
       website: {
         type: Sequelize.STRING
       },
@@ -27,7 +30,7 @@ module.exports = {
       mobileNumber: {
         type: Sequelize.STRING
       },
-      Location: {
+      location: {
         type: Sequelize.GEOMETRY('POINT')
       },
       createdAt: {
@@ -41,6 +44,8 @@ module.exports = {
     });
   },
   down: async (queryInterface, Sequelize) => {
+    await queryInterface.sequelize.query('SET FOREIGN_KEY_CHECKS=0;')
     await queryInterface.dropTable('company');
+    await queryInterface.sequelize.query('SET FOREIGN_KEY_CHECKS=1;')
   }
 };

@@ -6,11 +6,15 @@ module.exports = (sequelize, DataTypes) => {
   class CategoryService extends Model {
     static associate(models) {
       CategoryService.belongsTo(models.Category,{
-        foreignKey: 'category_id'
+        foreignKey: 'category_id',
+        onDelete: 'cascade',
+        onUpdate: 'cascade'
       })
 
       CategoryService.hasMany(models.Company,{
-        foreignKey: 'category_service_id'
+        foreignKey: 'category_service_id',
+        onDelete: 'cascade',
+        onUpdate: 'cascade'
       });
 
     }

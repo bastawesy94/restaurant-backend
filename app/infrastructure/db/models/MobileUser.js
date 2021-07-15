@@ -5,9 +5,13 @@ module.exports = (sequelize, DataTypes) => {
     static associate(models) {
       MobileUser.hasMany(models.Review, {
       foreignKey: 'mobile_user_id',
+      onDelete: 'cascade',
+      onUpdate: 'cascade'
      });
     MobileUser.hasMany(models.Order, {
       foreignKey: 'mobile_user_id',
+      onDelete: 'cascade',
+      onUpdate: 'cascade'
      });
     }
   };

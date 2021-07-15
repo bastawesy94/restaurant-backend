@@ -6,10 +6,14 @@ module.exports = (sequelize, DataTypes) => {
   class Product extends Model {
     static associate(models) {
       Product.belongsTo(models.Company,{
-        foreignKey: 'company_id'
+        foreignKey: 'company_id',
+        onDelete: 'cascade',
+        onUpdate: 'cascade'
       })
       Product.hasMany(models.Order,{
-        foreignKey: 'product_id'
+        foreignKey: 'product_id',
+        onDelete: 'cascade',
+        onUpdate: 'cascade'
       })
     }
   };
