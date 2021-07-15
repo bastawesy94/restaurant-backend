@@ -28,8 +28,10 @@ module.exports = class{
 
     async getCompanyById(req, res){
         try{
-            const result= await this.companyServices.getCompanyById(req.body.companyId)
-            if(result.length == 0)
+            const result= await this.companyServices.getCompanyById(req.params.id)
+            console.log(req.params.id)
+            console.log(result)
+            if(!result)
                return res.status(200).json(Response.format(200,req.polyglot.t('emptyrResponse'),result))
             return res.status(200).json(Response.format(200,req.polyglot.t('companyProfileDetails'),result))
         }
@@ -42,7 +44,7 @@ module.exports = class{
     async getAllCompaniesByCategoryServiceId(req , res){
         try{
             const result= await this.companyServices
-                        .getAllCompaniesByCategoryServiceId(req.body.categoryServiceId)
+                        .getAllCompaniesByCategoryServiceId(req.params.categoryServiceId)
             if(result.length == 0)
                return res.status(200).json(Response.format(200,req.polyglot.t('emptyrResponse'),result))
             return res.status(200).json(Response.format(200,req.polyglot.t('productDetails'),result))
