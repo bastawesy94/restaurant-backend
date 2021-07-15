@@ -1,40 +1,45 @@
 'use strict';
 module.exports = {
   up: async (queryInterface, Sequelize) => {
-      const categories = await queryInterface.sequelize.query(
-      `SELECT id from category;`
-    );
+    //   const categories = await queryInterface.sequelize.query(
+    //   `SELECT id from category;`
+    // );
     
-    const categoryRows = categories[1];
+    // const categoryRows = categories[1];
 
     await queryInterface.bulkInsert('category_service', [
      {
+      id: 1,
       name: 'كراتين مياه',
-      category_id:categoryRows[1].id,
+      category_id:1,
       createdAt: new Date(),
       updatedAt: new Date()
      },
      {
+      id: 2,
       name: 'تحلية مياه',
-      category_id:categoryRows[1].id,
+      category_id:1,
       createdAt: new Date(),
       updatedAt: new Date()
      },
      {
+      id: 4,
       name: 'خدمة الصرف الصحي',
-      category_id:categoryRows[0].id,
+      category_id:3,
       createdAt: new Date(),
       updatedAt: new Date()
      },
      {
+      id: 3,
       name:'يبيع وشراء الخزانات',
-      category_id:categoryRows[2].id,
+      category_id:2,
       createdAt: new Date(),
       updatedAt: new Date()
      },
      {
+      id: 5,
       name:'خدمة الصيانة',
-      category_id:categoryRows[3].id,
+      category_id:4,
       createdAt: new Date(),
       updatedAt: new Date()
      }
