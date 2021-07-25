@@ -9,6 +9,11 @@ module.exports = class{
                     param('companyId').exists().withMessage('requiredField').isNumeric().withMessage('numberField'),
                 ]
             }
+            case 'allReviewsByProductId': {
+                return [
+                    param('productId').exists().withMessage('requiredField').isNumeric().withMessage('numberField'),
+                ]
+            }
         }
     }      
 }

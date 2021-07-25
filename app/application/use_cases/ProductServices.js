@@ -3,6 +3,7 @@ module.exports = class{
         this.productRepository = productRepository
         this.getAllProducts= this.getAllProducts.bind(this)
         this.getAllProductsByCompanyId= this.getAllProductsByCompanyId.bind(this)
+        this.getProductRateByProductId= this.getProductRateByProductId.bind(this)
     }
 
     getAllProducts(){
@@ -11,5 +12,9 @@ module.exports = class{
 
     getAllProductsByCompanyId(companyId){
         return this.productRepository.getAllProductsByCompanyId(companyId)
+    }
+
+    getProductRateByProductId(productId){
+        return this.productRepository.getProductRateByProductId(productId)
     }
 }

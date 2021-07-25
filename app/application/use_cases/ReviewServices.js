@@ -10,4 +10,7 @@ module.exports = class{
     getAllReviewsByCompanyId(companyId){
         return this.reviewRepository.getAllReviewsByCompanyId(companyId)
     }
+    getAllReviewsByProductId(productId){
+        return this.reviewRepository.getAllReviewsByProductId(productId)
+    }
 }

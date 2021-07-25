@@ -22,6 +22,13 @@ module.exports = {
           key: 'id'
          }
        },
+       product_id: {
+        type: Sequelize.INTEGER,
+        references: {
+          model: 'product',
+          key: 'id'
+         }
+       },
       opinion: {
         type: Sequelize.STRING
       },

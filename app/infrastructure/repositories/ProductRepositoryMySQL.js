@@ -1,4 +1,5 @@
 const ProductRepo = require('../../domain/product/ProductRepository')
+const { sequelize, QueryTypes } = require('sequelize');
 
 module.exports = class extends ProductRepo{
    constructor({db}){
@@ -19,4 +20,12 @@ module.exports = class extends ProductRepo{
             where:{company_id: companyId}
         })
     }
+
+    getProductRateByProductId(productId){
+        return this.db.sequelize.query('SELECT product.id , product.name , AVG(review.stars) as rating FROM product LEFT JOIN review ON review.product_id = product.id WHERE review.product_id= $1 GROUP BY product.id',{
+            bind: [productId],
+            type: QueryTypes.SELECT
+        })
+    }
+
 }

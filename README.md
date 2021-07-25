@@ -17,4 +17,3 @@
 (Test login scinarios) #npm run test </br>
 
 📫 That's all and if you get stuck, communicate with me . 
-# courses_center

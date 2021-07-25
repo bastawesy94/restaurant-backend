@@ -15,11 +15,17 @@ module.exports = (sequelize, DataTypes) => {
         onDelete: 'cascade',
         onUpdate: 'cascade'
       })
+      Review.belongsTo(models.Review,{
+        foreignKey: 'product_id',
+        onDelete: 'cascade',
+        onUpdate: 'cascade'
+      })
     }
   };
   Review.init({
     company_id: DataTypes.INTEGER,
     mobile_user_id: DataTypes.INTEGER,
+    product_id: DataTypes.INTEGER,
     opinion: DataTypes.STRING,
     stars: DataTypes.INTEGER
   }
