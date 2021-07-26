@@ -16,8 +16,9 @@ module.exports = class extends ProductRepo{
     }
 
     getAllProductsByCompanyId(companyId){
-        return this.db.Product.findAll({
-            where:{company_id: companyId}
+        return this.db.sequelize.query('SELECT product.id , product.name , AVG(review.stars) as rating FROM product LEFT JOIN review ON review.product_id = product.id WHERE product.company_id= $1 GROUP BY product.id',{
+            bind: [companyId],
+            type: QueryTypes.SELECT
         })
     }
 
