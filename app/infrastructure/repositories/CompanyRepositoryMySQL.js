@@ -45,7 +45,6 @@ module.exports = class extends CompanyRepo{
 
     getAllCompaniesWithRate(){
             return this.db.sequelize.query('SELECT company.id , company.id , company.name , AVG(review.stars) as rating FROM company LEFT JOIN review ON review.company_id = company.id GROUP BY company.id',{
-                // model: this.db.Company,
                 type: QueryTypes.SELECT
             })
     }
