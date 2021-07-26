@@ -7,6 +7,7 @@ const CompanyServices= require('../../../application/use_cases/CompanyServices')
 const ProductServices= require('../../../application/use_cases/ProductServices')
 const ReviewServices= require('../../../application/use_cases/ReviewServices')
 const OrderServices= require('../../../application/use_cases/OrderServices')
+const CartServices= require('../../../application/use_cases/CartServices')
 
 const MobileUserControllers = require('../../../interfaces/controllers/MobileUserControllers')
 const CategoryControllers= require('../../../interfaces/controllers/CategoryControllers')
@@ -15,6 +16,7 @@ const CompanyControllers= require('../../../interfaces/controllers/CompanyContro
 const ProductControllers= require('../../../interfaces/controllers/ProductControllers')
 const ReviewControllers= require('../../../interfaces/controllers/ReviewControllers')
 const OrderControllers= require('../../../interfaces/controllers/OrderControllers')
+const CartControllers= require('../../../interfaces/controllers/CartControllers')
 
 const MobileUserRepository = require('../../repositories/MobileUserReposetoryMySQL');
 const CategoryRepository = require('../../repositories/CategoryRepositoryMySQL');
@@ -23,6 +25,7 @@ const CompanyRepository = require('../../repositories/CompanyRepositoryMySQL');
 const ProductRepository = require('../../repositories/ProductRepositoryMySQL');
 const ReviewRepository = require('../../repositories/ReviewRepositoryMySQL');
 const OrderRepository = require('../../repositories/OrderRepositoryMySQL');
+const CartRepository = require('../../repositories/CartRepositoryMySQL');
 
 const db = require('../../db/models/index');
 
@@ -37,6 +40,7 @@ const registerContainer = (otherServices = null) => {
            productServices : asClass(ProductServices),
            orderServices : asClass(OrderServices),
            reviewServices : asClass(ReviewServices),
+           cartServices : asClass(CartServices),
 
           //controllers
           mobileUserControllers: asClass(MobileUserControllers),
@@ -46,6 +50,7 @@ const registerContainer = (otherServices = null) => {
           productControllers: asClass(ProductControllers),
           reviewControllers: asClass(ReviewControllers),
           orderControllers: asClass(OrderControllers),
+          cartControllers: asClass(CartControllers),
 
           //repositories
           mobileUserRepository: asClass(MobileUserRepository),
@@ -55,6 +60,7 @@ const registerContainer = (otherServices = null) => {
           productRepository: asClass(ProductRepository),
           reviewRepository: asClass(ReviewRepository),
           orderRepository: asClass(OrderRepository),
+          cartRepository: asClass(CartRepository),
 
           //database
           db :asValue(db),

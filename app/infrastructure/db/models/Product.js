@@ -10,6 +10,11 @@ module.exports = (sequelize, DataTypes) => {
         onDelete: 'cascade',
         onUpdate: 'cascade'
       })
+      Product.belongsTo(models.Cart,{
+        foreignKey: 'product_id',
+        onDelete: 'cascade',
+        onUpdate: 'cascade'
+      })
       Product.hasMany(models.Order,{
         foreignKey: 'product_id',
         onDelete: 'cascade',

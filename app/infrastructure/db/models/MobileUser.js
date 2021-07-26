@@ -13,6 +13,11 @@ module.exports = (sequelize, DataTypes) => {
       onDelete: 'cascade',
       onUpdate: 'cascade'
      });
+     MobileUser.belongsTo(models.Cart,{
+      foreignKey: 'mobile_user_id',
+      onDelete: 'cascade',
+      onUpdate: 'cascade'
+    })
     }
   };
   MobileUser.init({

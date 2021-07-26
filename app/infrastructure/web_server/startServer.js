@@ -8,6 +8,7 @@ const companyRouters= require('../../interfaces/routes/company')
 const productRouters=  require('../../interfaces/routes/product')
 const reviewRouters= require('../../interfaces/routes/review')
 const orderRouters= require('../../interfaces/routes/order')
+const cartRouters= require('../../interfaces/routes/cart')
 
 const DatabaseService = require('../db/databaseService/database')
 const WebServerService = require('./WebServerService')
@@ -29,6 +30,7 @@ module.exports =()=>{
     app.use('/api' , productRouters);
     app.use('/api' , reviewRouters);
     app.use('/api' , orderRouters);
+    app.use('/api' , cartRouters);
 
     DatabaseService.testConnection(sequelize)
     app.listen(PORT,()=>{console.log(`${serverType} Server Running on ${PORT} !`)});

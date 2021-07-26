@@ -5,5 +5,6 @@
   "20210623165903-create-company.js",
   "20210623171357-create-product.js",
   "20210623173345-create-review.js",
-  "20210628135318-create-order.js"
+  "20210628135318-create-order.js",
+  "20210726131023-create-cart.js"
 ]
