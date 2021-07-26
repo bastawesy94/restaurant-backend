@@ -5,12 +5,12 @@ const {
 module.exports = (sequelize, DataTypes) => {
   class Cart extends Model {
     static associate(models) {
-      Cart.hasOne(models.MobileUser,{
+      Cart.belongsTo(models.MobileUser,{
         foreignKey: 'mobile_user_id',
         onDelete: 'cascade',
         onUpdate: 'cascade'
       })
-      Cart.hasOne(models.Product,{
+      Cart.belongsTo(models.Product,{
         foreignKey: 'product_id',
         onDelete: 'cascade',
         onUpdate: 'cascade'

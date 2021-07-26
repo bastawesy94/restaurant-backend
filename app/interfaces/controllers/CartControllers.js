@@ -21,7 +21,10 @@ module.exports = class{
     }
     async createCart(req , res){
         try{
-            const result= await this.cartServices.createCart(req.body.productId ,req.body.mobileUserId)
+            const {productId} = req.body
+            const mobileUserId = req.mobileUser.mobileUser
+            console.log("user id: " + mobileUserId)
+            const result= await this.cartServices.createCart(productId ,mobileUserId)
             console.log("result : " + result)
             if(result.length == 0)
                return res.status(200).json(Response.format(200,req.polyglot.t('emptyrResponse'),result))
