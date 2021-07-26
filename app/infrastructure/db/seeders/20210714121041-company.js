@@ -12,6 +12,7 @@ module.exports = {
 
     await queryInterface.bulkInsert('company', 
     [{
+      id:1,
       category_service_id: serviceRows[0].id,
       name: 'شركة 1',
       description:'تفاصيل عن الشركة ونشاطها ومنتجاتخها ... ',
@@ -23,6 +24,7 @@ module.exports = {
       updatedAt: new Date()
      },
      {
+      id:2,
       category_service_id: serviceRows[0].id,
       name: 'شركة 2',
       description:'تفاصيل عن الشركة ونشاطها ومنتجاتخها ... ',
@@ -34,6 +36,7 @@ module.exports = {
       updatedAt: new Date()
      },
      {
+      id:3,
       category_service_id: serviceRows[1].id,
       description:'تفاصيل عن الشركة ونشاطها ومنتجاتخها ... ',
       name: 'شركة 3',
@@ -45,6 +48,7 @@ module.exports = {
       updatedAt: new Date()
      },
      {
+      id:4,
       category_service_id: serviceRows[1].id,
       name: 'شركة 4',
       description:'تفاصيل عن الشركة ونشاطها ومنتجاتخها ... ',
@@ -56,6 +60,7 @@ module.exports = {
       updatedAt: new Date()
      },
      {
+      id:5,
       category_service_id: serviceRows[1].id,
       name: 'شركة 5',
       description:'تفاصيل عن الشركة ونشاطها ومنتجاتخها ... ',
@@ -67,6 +72,7 @@ module.exports = {
       updatedAt: new Date()
      },
      {
+      id:6,
       category_service_id: serviceRows[2].id,
       name: 'شركة 6',
       description:'تفاصيل عن الشركة ونشاطها ومنتجاتخها ... ',
@@ -78,6 +84,7 @@ module.exports = {
       updatedAt: new Date()
      },
      {
+      id:7,
       category_service_id: serviceRows[2].id,
       name: 'شركة 7',
       description:'تفاصيل عن الشركة ونشاطها ومنتجاتخها ... ',
@@ -89,6 +96,7 @@ module.exports = {
       updatedAt: new Date()
      },
      {
+      id:8,
       category_service_id: serviceRows[3].id,
       name: 'شركة 8',
       description:'تفاصيل عن الشركة ونشاطها ومنتجاتخها ... ',
