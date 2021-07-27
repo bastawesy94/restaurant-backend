@@ -43,5 +43,14 @@ module.exports = class extends CartRepo{
     incrementQuantityCart(itemId , mobileUserId){
         return this.db.Cart.increment('quantity', { by: 1, where: { id: itemId , mobile_user_id : mobileUserId }});
     }
+    updateCart(itemId ,mobileUserId, quantity){
+        return this.db.Cart.update({quantity : quantity},{
+            where:{
+                id: itemId,
+                mobile_user_id: mobileUserId,
+                isCompletedOrder : false,
+            }
+        })
+    }
 
 }

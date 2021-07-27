@@ -8,6 +8,7 @@ module.exports = class{
         this.removeCart= this.removeCart.bind(this)
         this.isProductInCart= this.isProductInCart.bind(this)
         this.incrementQuantityCart= this.incrementQuantityCart.bind(this)
+        this.updateCart= this.updateCart.bind(this)
     }
 
     getAllCarts(mobileUserId){
@@ -25,6 +26,9 @@ module.exports = class{
     }
     incrementQuantityCart(itemId , mobileUserId){
         return this.cartRepository.incrementQuantityCart(itemId,mobileUserId)
+    }
+    updateCart(itemId , mobileUserId , quantity){
+        return this.cartRepository.updateCart(itemId , mobileUserId , quantity)
     }
 
 }

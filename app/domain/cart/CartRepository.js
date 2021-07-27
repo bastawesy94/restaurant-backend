@@ -10,7 +10,7 @@ module.exports = class{
     removeCart(cartId){
         throw new Error('ERROR_METHOD_NOT_EMPLEMENTED')
     }
-    updateCart(cartId){
+    updateCart(itemId , mobileUserId , quantity){
         throw new Error('ERROR_METHOD_NOT_EMPLEMENTED')
     }
     createCart(cart){

@@ -6,6 +6,7 @@ module.exports = class{
         this.getAllCarts= this.getAllCarts.bind(this)
         this.createCart= this.createCart.bind(this)
         this.removeCart= this.removeCart.bind(this)
+        this.updateCart= this.updateCart.bind(this)
     }
     
     async getAllCarts(req , res){
@@ -26,7 +27,6 @@ module.exports = class{
             const {productId} = req.body
             const mobileUserId = req.mobileUser.mobileUser
             const existItem= await this.cartServices.isProductInCart(productId,mobileUserId)
-            // console.log("id of item in cart is : " + existItem.id)
             if(existItem){
                 const incrementedItem= await this.cartServices.incrementQuantityCart(existItem.id,mobileUserId)
                 return res.status(200).json(Response.format(200,req.polyglot.t('savedItemOfCart')))
@@ -47,5 +47,24 @@ module.exports = class{
         if(result !== 1)
             return res.status(400).json(Response.format(500,req.polyglot.t('deleteError')))
         return res.status(200).json(Response.format(200,req.polyglot.t('deleteSuccess'),result))
+    }
+
+    async updateCart(req , res){
+        try{
+            const {data} = req.body
+            const mobileUserId= req.mobileUser.mobileUser
+            console.log("######## mobileUserId ####### " + mobileUserId)
+            for(let itemIndex in data){
+                console.log("######## id ####### " + data[itemIndex].id)
+                console.log("######### quanntity ###### " + data[itemIndex].quantity)
+                const resultOfUpdate= await this.cartServices.updateCart(data[itemIndex].id , mobileUserId , data[itemIndex].quantity)
+                console.log("resultOfUpdate : " + resultOfUpdate)
+            }
+            return res.status(200).json(Response.format(200,req.polyglot.t('savedItemOfCart')))
+        }
+        catch(error){
+            console.log(error)
+            return res.status(500).json(Response.format(500,req.polyglot.t('serverError'),error.message))
+        }    
     }
 }
