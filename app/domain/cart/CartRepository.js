@@ -4,7 +4,7 @@ module.exports = class{
     getCart(){
         throw new Error('ERROR_METHOD_NOT_EMPLEMENTED')
     }
-    getAllCarts(){
+    getAllCarts(mobileUserId){
         throw new Error('ERROR_METHOD_NOT_EMPLEMENTED')
     }
     removeCart(cartId){

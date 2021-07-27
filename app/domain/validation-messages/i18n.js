@@ -30,7 +30,10 @@ const messages = {
         'companyProfileDetails': 'Company Pfofile Details.',
         'locationAdded': 'Location of User is Added.',
         'numberField': 'required field must be number.',
-        'requiredField': 'this feild is required.'
+        'requiredField': 'this feild is required.',
+        'deleteError': 'delete process id faild',
+        'deleteSuccess': 'delete process is done',
+        'cartDetails': 'detailsof your cart'
     },
     ar: {
         'mobileNumberRequired': 'يجب إدخال رقم الموبايل لتسجيل الحساب.',
@@ -62,7 +65,10 @@ const messages = {
         'companyProfileDetails': 'تم استرجاع بيانات الشركه .',
         'locationAdded': 'تم تسجيل موقع المستخدم بنجاح .',
         'numberField': 'يجب أدخال قيمة رقمية .',
-        'requiredField': 'يجب ادخال قيمة في الخطوة السابقة.'
+        'requiredField': 'يجب ادخال قيمة في الخطوة السابقة.',
+        'deleteError': 'عملية حزف غير ناجحة',
+        'deleteSuccess': 'تمت عملية الحزف',
+        'cartDetails': 'تفاصيل ومحتويات عربة الشراء .'
     }
 }
 module.exports = {

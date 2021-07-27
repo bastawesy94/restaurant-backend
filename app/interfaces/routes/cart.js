@@ -6,6 +6,8 @@ const cartControllers = registerContainer().resolve('cartControllers')
 // const {procErr} = require('../../interfaces/middleware/processError')
 // const CartValidator = require('../../domain/cart/CartValidator')
 
-cartRouters.get('/cart/all',cartControllers.getAllCarts)
+cartRouters.get('/cart/all',mobileUserAuth,cartControllers.getAllCarts)
 cartRouters.post('/cart/add-product',mobileUserAuth,cartControllers.createCart)
+cartRouters.delete('/cart/:itemId',mobileUserAuth,cartControllers.removeCart)
+
 module.exports = cartRouters
