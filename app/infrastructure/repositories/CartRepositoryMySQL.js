@@ -12,7 +12,11 @@ module.exports = class extends CartRepo{
             where:{
                 isCompletedOrder : false,
                 mobile_user_id: mobileUserId
-            }
+            },
+            include:[{
+                model : this.db.Product,
+                attributes: ['id' , 'name' , 'cost'] 
+            }]
         })
     }
 
@@ -26,6 +30,18 @@ module.exports = class extends CartRepo{
                 id: cartId
             }
         })
+    }
+    isProductInCart(productId ,mobileUserId){
+        return this.db.Cart.findOne({
+            where:{
+                product_id: productId,
+                isCompletedOrder : false,
+                mobile_user_id: mobileUserId
+            }
+        })
+    }
+    incrementQuantityCart(itemId , mobileUserId){
+        return this.db.Cart.increment('quantity', { by: 1, where: { id: itemId , mobile_user_id : mobileUserId }});
     }
 
 }

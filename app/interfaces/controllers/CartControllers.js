@@ -25,9 +25,13 @@ module.exports = class{
         try{
             const {productId} = req.body
             const mobileUserId = req.mobileUser.mobileUser
-            console.log("user id: " + mobileUserId)
+            const existItem= await this.cartServices.isProductInCart(productId,mobileUserId)
+            // console.log("id of item in cart is : " + existItem.id)
+            if(existItem){
+                const incrementedItem= await this.cartServices.incrementQuantityCart(existItem.id,mobileUserId)
+                return res.status(200).json(Response.format(200,req.polyglot.t('savedItemOfCart')))
+            }
             const result= await this.cartServices.createCart(productId ,mobileUserId)
-            console.log("result : " + result)
             if(result.length == 0)
                return res.status(200).json(Response.format(200,req.polyglot.t('emptyrResponse'),result))
             return res.status(200).json(Response.format(200,req.polyglot.t('cartDetails'),result))

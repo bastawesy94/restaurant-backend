@@ -1,7 +1,7 @@
 const models = require('../../infrastructure/db/models/index')
 
 module.exports = class{
-    getCart(){
+    isProductInCart(productId,mobileUserId){
         throw new Error('ERROR_METHOD_NOT_EMPLEMENTED')
     }
     getAllCarts(mobileUserId){
@@ -14,6 +14,9 @@ module.exports = class{
         throw new Error('ERROR_METHOD_NOT_EMPLEMENTED')
     }
     createCart(cart){
+        throw new Error('ERROR_METHOD_NOT_EMPLEMENTED')
+    }
+    incrementQuantityCart(itemId , mobileUserId){
         throw new Error('ERROR_METHOD_NOT_EMPLEMENTED')
     }
 }

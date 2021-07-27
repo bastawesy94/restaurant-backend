@@ -33,7 +33,8 @@ const messages = {
         'requiredField': 'this feild is required.',
         'deleteError': 'delete process id faild',
         'deleteSuccess': 'delete process is done',
-        'cartDetails': 'detailsof your cart'
+        'cartDetails': 'details of your cart',
+        'savedItemOfCart': 'item has been saved in your cart'
     },
     ar: {
         'mobileNumberRequired': 'يجب إدخال رقم الموبايل لتسجيل الحساب.',
@@ -68,7 +69,9 @@ const messages = {
         'requiredField': 'يجب ادخال قيمة في الخطوة السابقة.',
         'deleteError': 'عملية حزف غير ناجحة',
         'deleteSuccess': 'تمت عملية الحزف',
-        'cartDetails': 'تفاصيل ومحتويات عربة الشراء .'
+        'cartDetails': 'تفاصيل ومحتويات عربة الشراء .',
+        'savedItemOfCart': 'تم أضافة منتج في عربة الشراء الخاصة بك .'
+
     }
 }
 module.exports = {
