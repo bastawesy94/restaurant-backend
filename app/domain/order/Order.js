@@ -1,10 +1,8 @@
 module.exports= class{
-    constructor(mobile_user_id,company_id,product_id,quantity,state){ 
+    constructor(mobile_user_id,product_id,quantity){ 
         this.mobile_user_id= mobile_user_id
-        this.company_id= company_id
         this.product_id= product_id
         this.quantity= quantity
-        this.state= state
     }
     getState(){
         return this.state

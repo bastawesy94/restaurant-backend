@@ -2,7 +2,8 @@ const Order = require('../../domain/order/Order')
 const Response = require('../serializers/ResponseFormate')
 
 module.exports = class{
-    constructor({orderServices}){
+    constructor({orderServices ,cartServices}){
+        this.cartServices= cartServices
         this.orderServices = orderServices
         this.getAllOrders= this.getAllOrders.bind(this)
         this.getAllOrdersByCompanyId= this.getAllOrdersByCompanyId.bind(this)
@@ -12,13 +13,14 @@ module.exports = class{
     
     async createOrder(req , res){
         try{
-            const{mobile_user_id ,company_id ,product_id, quantity , state} = req.body
-            const order= new Order(mobile_user_id ,company_id ,product_id,quantity,state)
-            console.log("from user : " + order)
-            const result= await this.orderServices.createOrder(order)
-            if(!result)
-               return res.status(200).json(Response.format(200,req.polyglot.t('serverError')))
-            return res.status(200).json(Response.format(200,req.polyglot.t('orderCreated'),result))
+            const mobileUserId= req.mobileUser.mobileUser
+            const items= await this.cartServices.getAllCarts(mobileUserId)
+            // let counter= 0
+            for(let itemIndex in items){
+                const order= new Order(mobileUserId ,items[itemIndex].product_id,items[itemIndex].quantity)
+                await this.orderServices.createOrder(order)
+            }
+            return res.status(200).json(Response.format(200,req.polyglot.t('orderCreated')))
         }
         catch(error){
             console.log(error)

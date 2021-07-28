@@ -26,7 +26,8 @@ module.exports = {
         type: Sequelize.INTEGER
       },
       state: {
-        type: Sequelize.STRING
+        type: Sequelize.STRING,
+        defaultValue: 'PENDING'
       },
       deliveryCost: {
         type: Sequelize.DOUBLE,
