@@ -10,5 +10,6 @@ cartRouters.get('/cart/all',mobileUserAuth,cartControllers.getAllCarts)
 cartRouters.post('/cart/add-product',mobileUserAuth,cartControllers.createCart)
 cartRouters.delete('/cart/:itemId',mobileUserAuth,cartControllers.removeCart)
 cartRouters.post('/cart/update-quantity',mobileUserAuth,cartControllers.updateCart)
+cartRouters.get('/cart/display-Receipt',mobileUserAuth,cartControllers.displayReceipt)
 
 module.exports = cartRouters

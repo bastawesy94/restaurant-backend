@@ -52,5 +52,10 @@ module.exports = class extends CartRepo{
             }
         })
     }
-
+    displayReceipt(mobileUserId){
+        return this.db.sequelize.query('SELECT cart.mobile_user_id , SUM(product.cost) as sumOfCosts FROM cart LEFT JOIN product ON product.id = cart.product_id WHERE cart.mobile_user_id= $1 AND isCompletedOrder= false GROUP BY cart.mobile_user_id',{
+            bind: [mobileUserId],
+            type: QueryTypes.SELECT
+        })
+    }
 }

@@ -9,6 +9,7 @@ module.exports = class{
         this.isProductInCart= this.isProductInCart.bind(this)
         this.incrementQuantityCart= this.incrementQuantityCart.bind(this)
         this.updateCart= this.updateCart.bind(this)
+        this.displayReceipt= this.displayReceipt.bind(this)
     }
 
     getAllCarts(mobileUserId){
@@ -29,6 +30,10 @@ module.exports = class{
     }
     updateCart(itemId , mobileUserId , quantity){
         return this.cartRepository.updateCart(itemId , mobileUserId , quantity)
+    }
+    displayReceipt(mobileUserId){
+        return this.cartRepository.displayReceipt(mobileUserId)
+
     }
 
 }

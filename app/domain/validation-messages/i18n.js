@@ -34,7 +34,9 @@ const messages = {
         'deleteError': 'delete process id faild',
         'deleteSuccess': 'delete process is done',
         'cartDetails': 'details of your cart',
-        'savedItemOfCart': 'item has been saved in your cart'
+        'savedItemOfCart': 'item has been saved in your cart',
+        'receiptDetails' : 'details of receipt.'
+
     },
     ar: {
         'mobileNumberRequired': 'يجب إدخال رقم الموبايل لتسجيل الحساب.',
@@ -70,7 +72,8 @@ const messages = {
         'deleteError': 'عملية حزف غير ناجحة',
         'deleteSuccess': 'تمت عملية الحزف',
         'cartDetails': 'تفاصيل ومحتويات عربة الشراء .',
-        'savedItemOfCart': 'تم أضافة منتج في عربة الشراء الخاصة بك .'
+        'savedItemOfCart': 'تم أضافة منتج في عربة الشراء الخاصة بك .',
+        'receiptDetails' : 'تفاصيل الفاتورة .'
 
     }
 }

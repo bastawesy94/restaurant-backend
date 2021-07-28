@@ -20,11 +20,6 @@ module.exports = (sequelize, DataTypes) => {
       onDelete: 'cascade',
       onUpdate: 'cascade'
      });
-     Company.hasMany(models.Order, {
-      foreignKey: 'company_id',
-      onDelete: 'cascade',
-      onUpdate: 'cascade'
-     });
     }
   };
   Company.init({

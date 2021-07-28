@@ -15,13 +15,6 @@ module.exports = {
           key: 'id'
          }
        },
-       company_id: {
-        type: Sequelize.INTEGER,
-        references: {
-          model: 'company',
-          key: 'id'
-         }
-       },
        product_id: {
         type: Sequelize.INTEGER,
         references: {
@@ -35,6 +28,18 @@ module.exports = {
       state: {
         type: Sequelize.STRING
       },
+      deliveryCost: {
+        type: Sequelize.DOUBLE,
+        defaultValue: 0
+      },
+      fixingCost: {
+        type: Sequelize.DOUBLE,
+        defaultValue: 0
+      },
+      setupCost: {
+        type: Sequelize.DOUBLE,
+        defaultValue: 0
+      },
       createdAt: {
         allowNull: false,
         type: Sequelize.DATE
@@ -47,7 +52,7 @@ module.exports = {
   },
   down: async (queryInterface, Sequelize) => {
     await queryInterface.sequelize.query('SET FOREIGN_KEY_CHECKS=0;')
-    await queryInterface.dropTable('Orders');
+    await queryInterface.dropTable('order');
     await queryInterface.sequelize.query('SET FOREIGN_KEY_CHECKS=1;')
   }
 };

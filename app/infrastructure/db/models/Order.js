@@ -15,19 +15,16 @@ module.exports = (sequelize, DataTypes) => {
         onDelete: 'cascade',
         onUpdate: 'cascade'
       })
-      Order.belongsTo(models.Company,{
-        foreignKey: 'company_id',
-        onDelete: 'cascade',
-        onUpdate: 'cascade'
-      })
     }
   };
   Order.init({
     product_id: DataTypes.INTEGER,
-    company_id: DataTypes.INTEGER,
     mobile_user_id: DataTypes.INTEGER,
     quantity: DataTypes.INTEGER,
-    state: DataTypes.STRING
+    state: DataTypes.STRING,
+    deliveryCost: DataTypes.DOUBLE,
+    fixingCost: DataTypes.DOUBLE,
+    setupCost: DataTypes.DOUBLE,
   }, {
     sequelize,
     modelName: 'Order',
