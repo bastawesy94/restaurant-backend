@@ -78,9 +78,9 @@ module.exports = class{
             const finalReceipt = {
                 userId:mobileUserId,
                 someOfProductCosts : result[0].sumOfCosts,
+                setUpCost: 0,
                 deliveryCost : 500 ,
-                totalReceiptCost: result[0].sumOfCosts + 500
-            }
+                totalReceiptCost: result[0].sumOfCosts + 500 + 0            }
             return res.status(200).json(Response.format(200,req.polyglot.t('receiptDetails'),finalReceipt))
         }
         catch(error){
