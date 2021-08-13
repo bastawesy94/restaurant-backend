@@ -1,19 +1,19 @@
-const models = require('../../infrastructure/db/models/index')
+const models = require('../../infrastructure/db/models/index') //better to use DI.
 
 module.exports = class{
-    getOrder(){
+    getUser(){
         throw new Error('ERROR_METHOD_NOT_EMPLEMENTED')
     }
-    getAllOrders(){
+    getAllUsers(){
         throw new Error('ERROR_METHOD_NOT_EMPLEMENTED')
     }
-    removeOrder(orderId){
+    removeUser(userId){
         throw new Error('ERROR_METHOD_NOT_EMPLEMENTED')
     }
-    updateOrder(orderId){
+    updateUser(userId){
         throw new Error('ERROR_METHOD_NOT_EMPLEMENTED')
     }
-    createOrder(order){
+    createUser(user){
         throw new Error('ERROR_METHOD_NOT_EMPLEMENTED')
     }
 }

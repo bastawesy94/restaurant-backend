@@ -5,17 +5,19 @@ module.exports = {
     await queryInterface.bulkInsert('mobile_user', 
     [{
       id:  1,
-      mobileNumber: "5012345678",//password
-      password: '$2b$10$FJL0xJjlTHu/HYE.x6woMe1KtzGUC2sQn2qtTFx.svvLNe8UGQL9u',
-      location: Sequelize.fn('ST_GeomFromText', 'POINT(52.458415 16.904740)'),
+      userName: "demouser",
+      mobileNumber: "543364313436",
+      password: '$2b$10$YOpQLkWzULJj3AClahzcEOKFuUan4PR2AQADVYVs3Iv/CyvaPLmSm',
+      email: "mohamed112334343@gmail.com",
       createdAt: new Date(),
       updatedAt: new Date() 
     },
     {
       id:  2,
-      mobileNumber: "50404040404",
-      password: '50404040404',
-      location: Sequelize.fn('ST_GeomFromText', 'POINT(52.458415 16.904740)'),
+      userName: "ahmed",
+      mobileNumber: "5646546646",
+      password: '$2b$10$FJL0xJjlTHu/HYE.x6woMe1KtzGUC2sQn2qtT',
+      email: "ahmed@gmail.com",
       createdAt: new Date(),
       updatedAt: new Date() 
     }], {});

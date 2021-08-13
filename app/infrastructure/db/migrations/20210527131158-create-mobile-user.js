@@ -8,17 +8,26 @@ module.exports = {
         type : Sequelize.INTEGER ,
         allowNull : false ,
       } ,
+      userName: {
+        type : Sequelize.STRING,
+        allowNull : true ,
+        unique : true ,
+      },
       mobileNumber: {
         type : Sequelize.STRING,
         allowNull : false ,
         unique : true ,
       },
-      password: {
+      email: {
+        type : Sequelize.STRING,
+        allowNull : false ,
+        unique : true ,
+      },
+       password: {
         type : Sequelize.STRING,
         allowNull : true ,
         unique : true ,
       },
-      location: Sequelize.GEOMETRY('POINT'),
       createdAt: {
         allowNull: false,
         type: Sequelize.DATE

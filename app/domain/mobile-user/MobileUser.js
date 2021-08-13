@@ -1,7 +1,15 @@
 module.exports = class{
-    constructor(mobileNumber , password){ 
+    constructor(userName , mobileNumber , email , password ){ 
+        this.userName= userName
         this.mobileNumber = mobileNumber
-        this.password = password
+        this.email= email
+        this.password= password
+    }
+    getUserName(){
+        return this.userName
+    }
+    setUserName(userName){
+        this.userName = userName
     }
     getMobileNumber(){
         return this.mobileNumber
@@ -9,4 +17,17 @@ module.exports = class{
     setMobileNumber(mobileNumber){
         this.mobileNumber = mobileNumber
     }
+    getEmail(){
+        return this.email
+    }
+    setEmail(email){
+        this.email = email
+    }
+    getPassword(){
+        return this.password
+    }
+    setPassword(password){
+        this.password = password
+    }
+  
 }

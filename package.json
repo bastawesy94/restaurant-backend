@@ -1,19 +1,14 @@
 {
-  "name": "saqy",
+  "name": "restaurant system",
   "version": "1.0.0",
-  "description": "a service of water problems",
+  "description": "a service for restaurants",
   "main": "index.js",
   "scripts": {
     "server": "node index.js",
-    "test": "jest",
     "migrate": "npx sequelize-cli db:migrate",
     "undomigrate": "npx sequelize-cli db:migrate:undo:all",
     "seed": "npx sequelize-cli db:seed:all",
     "undoseed": "npx sequelize-cli db:seed:undo:all"
-  },
-  "repository": {
-    "type": "git",
-    "url": "saqy-backend"
   },
   "author": "bastawesy",
   "license": "ISC",

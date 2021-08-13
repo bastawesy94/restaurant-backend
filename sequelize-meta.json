@@ -1,10 +1,4 @@
 [
   "20210527131158-create-mobile-user.js",
-  "20210623130258-create-category.js",
-  "20210623133431-create-category-service.js",
-  "20210623165903-create-company.js",
-  "20210623171357-create-product.js",
-  "20210623173345-create-review.js",
-  "20210628135318-create-order.js",
-  "20210726131023-create-cart.js"
+  "20210813185556-create-restaurant.js"
 ]

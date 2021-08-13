@@ -5,7 +5,7 @@ const jwt = require('jsonwebtoken')
 module.exports = class extends AccessTokenManager {
 
     static generate(mobileUser,role){
-        return jwt.sign({mobileUser,role} , process.env.DEV_JWT_PRRIVATE_KEY);
+        return jwt.sign({mobileUser,role} , process.env.LOCAL_JWT_PRRIVATE_KEY);
 
     }
 

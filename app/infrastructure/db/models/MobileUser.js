@@ -3,12 +3,7 @@ const { Model } = require('sequelize');
 module.exports = (sequelize, DataTypes) => {
   class MobileUser extends Model {
     static associate(models) {
-      MobileUser.hasMany(models.Review, {
-      foreignKey: 'mobile_user_id',
-      onDelete: 'cascade',
-      onUpdate: 'cascade'
-     });
-    MobileUser.hasMany(models.Order, {
+    MobileUser.hasMany(models.Restaurant, {
       foreignKey: 'mobile_user_id',
       onDelete: 'cascade',
       onUpdate: 'cascade'
@@ -16,7 +11,17 @@ module.exports = (sequelize, DataTypes) => {
     }
   };
   MobileUser.init({
+    userName: {
+      type : DataTypes.STRING,
+      allowNull : false ,
+      unique : true ,
+    },
     mobileNumber: {
+      type : DataTypes.STRING,
+      allowNull : false ,
+      unique : true ,
+    },
+    email: {
       type : DataTypes.STRING,
       allowNull : false ,
       unique : true ,
@@ -25,14 +30,12 @@ module.exports = (sequelize, DataTypes) => {
       type : DataTypes.STRING,
       allowNull : true ,
       unique : true ,
-    },
-    location: DataTypes.GEOMETRY('POINT')
-
+    }
   }, {
     sequelize,
-    modelName: 'MobileUser',
     freezeTableName: true,
-    tableName: 'mobile_user'
+    tableName: 'mobile_user',
+    modelName: 'MobileUser',
   });
   return MobileUser;
 };

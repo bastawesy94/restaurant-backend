@@ -6,35 +6,15 @@ module.exports = class extends UserRepo{
        super()
        this.db = db
    }
-
+   createMobileUser(user){
+    return this.db.MobileUser.create(user)
+    }
     getAllMobileUsers(){
         return this.db.MobileUser.findAll()
     }
-
-    createMobileUser(user){
-        return this.db.MobileUser.create(user)
-    }
-
-    findMobileUserByMobileNumber(mobileNumber){
+    findMobileUserByUserName(userName){
         return this.db.MobileUser.findOne({
-            where: {mobileNumber : mobileNumber}  
-        })
-    }
-
-    addPasswordtoCurrentMobileUser(user){
-        return this.db.MobileUser.update(
-        {password : user.password},
-        {
-        where :{mobileNumber : user.mobileNumber}  
-        })
-    }
-
-    saveMobileUserLocationPoint(location ,mobileUserId){
-        // const line = { type: 'Point', 'coordinates': [100.0, 0.0] };
-        return this.db.MobileUser.update(
-            {location : location},
-            {
-            where :{id : mobileUserId}  
+            where: {userName : userName}  
         }) 
     }
 }

@@ -1,19 +1,19 @@
-const models = require('../../infrastructure/db/models/index') //better to use DI.
+const models = require('../../infrastructure/db/models/index')
 
 module.exports = class{
-    getUser(){
+    createMobileUser(user){
         throw new Error('ERROR_METHOD_NOT_EMPLEMENTED')
     }
-    getAllUsers(){
+    updateMobileUser(user){
         throw new Error('ERROR_METHOD_NOT_EMPLEMENTED')
     }
-    removeUser(userId){
+    getMobileUserById(userId){
         throw new Error('ERROR_METHOD_NOT_EMPLEMENTED')
     }
-    updateUser(userId){
+    getAllMobileUsers(){
         throw new Error('ERROR_METHOD_NOT_EMPLEMENTED')
     }
-    createUser(user){
+    removeMobileUser(userId){
         throw new Error('ERROR_METHOD_NOT_EMPLEMENTED')
     }
 }
