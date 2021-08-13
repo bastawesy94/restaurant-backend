@@ -1,7 +1,6 @@
 const AccessTokenManager = require('../../infrastructure/security/AccessTokenManger')
 const bcrypt = require('bcrypt')
 const MobileUser = require('../../domain/mobile-user/MobileUser');
-const isValidSaudiMobileNumber = require('../utilities/isValidSaudiMobileNumber')
 module.exports = class {
         constructor({mobileUserRepository}){
                 this.mobileUserRepository = mobileUserRepository

@@ -1,14 +1,14 @@
 module.exports = class{
-    constructor(mobileUserId ,name , addrees){
-        this.mobileUserId= mobileUserId 
+    constructor(mobile_user_id ,name , address){
+        this.mobile_user_id= mobile_user_id 
         this.name = name
-        this.addrees = addrees
+        this.address = address
     }
     getMobileUserId(){
-        return this.mobileUserId
+        return this.mobile_user_id
     }
-    setMobileUserId(mobileUserId){
-        this.mobileUserId = mobileUserId
+    setMobileUserId(mobile_user_id){
+        this.mobile_user_id = mobile_user_id
     }
     getName(){
         return this.name
@@ -17,9 +17,9 @@ module.exports = class{
         this.name = name
     }
     getAddress(){
-        return this.addrees
+        return this.address
     }
-    setAddress(addrees){
-        this.addrees = addrees
+    setAddress(address){
+        this.address = address
     }
 }

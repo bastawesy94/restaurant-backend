@@ -13,6 +13,12 @@ const messages = {
         'userNameStringField' : 'userName must be string.',
         'userNameLength':'userName at least 6 charchters.',
 
+        'nameRequiredField':'Name is required field.',
+        'nameStringField' : 'Name must be string.',
+        
+        'addressRequiredField':'address is required field.',
+        'addressStringField' : 'address must be string.',
+
         'passwordRequiredField':'password is required field.',
         'passwordStringField' : 'password must be string.',
         'passwordLength':'password at least 6 charchters.',
@@ -23,7 +29,8 @@ const messages = {
         'emptyrResponse' : 'database still empty',
         'mobileUsers': 'all mobile users',
         'authFaild': 'authentication is faild.',
-        'restaurants': 'all restaurants data .'
+        'restaurants': 'all restaurants data .',
+        'restaurantCreated': 'restaurant created successfully'
     },
     ar: {
         'mobileNumberRequired': 'يجب إدخال رقم الموبايل لتسجيل الحساب.',
@@ -38,6 +45,12 @@ const messages = {
         'passwordString': 'الرقم السري لابد ان يكون جمله .',
         'passwordLength': 'الرقم السري لايقل عن ستةرموز',
 
+        'nameRequiredField':'يجب ادخال اسم المطعم.',
+        'nameStringField' : 'يجب ان يكون الاسم جملة وليست ارقام.',
+
+        'addressRequiredField':'يجب ادخال العنوان الخاص بالمطعم.',
+        'addressStringField' : ' يجب ادخال العنوان علي هيئة جملة.',
+
         'userNameRequired': 'يجب ادخال اسم مستخدم للنظام.',
         'userNameString': 'يجب ادخال اسم المستخدم علي هيئة جملة .',
         'userNameLength': 'يجب الا يفل اسم المستخدم عن ستة احرف',
@@ -48,7 +61,9 @@ const messages = {
         'emptyrResponse' : 'قاعدة البيانات ماذالت فارغة .',
         'mobileUsers': 'جميع مستخدمين النظام .',
         'authFaild': 'فشل في عملية تسجيل الدخول ',
-        'restaurants': 'جميع بيانات المطاعم المسجلة ..'
+        'restaurants': 'جميع بيانات المطاعم المسجلة .',
+        'restaurantCreated': 'تم اضافة مطعم جديد بنجاح'
+
 
   
     }

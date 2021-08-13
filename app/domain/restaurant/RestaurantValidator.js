@@ -2,8 +2,14 @@ const { check } = require('express-validator')
 
 module.exports = class{
 
-    static mobileUserValidate(functionName) {
+    static restaurantValidate(functionName) {
         switch (functionName) {
+            case 'createRestaurant': {
+                return [
+                    check('name').exists().withMessage('nameRequiredField').isString().withMessage('nameStringField'),
+                    check('address').exists().withMessage('addressRequiredField').isString().withMessage('addressStringField'),
+                ]
+            }
             case 'updateRestaurant': {
                 return [
                     check('name').exists().withMessage('requiredField').isString().withMessage('stringField'),//1-1
