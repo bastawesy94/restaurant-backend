@@ -1,5 +1,5 @@
 {
-  "name": "restaurant system",
+  "name": "restaurant-system",
   "version": "1.0.0",
   "description": "a service for restaurants",
   "main": "index.js",
