@@ -22,7 +22,8 @@ const messages = {
         'serverError':'server problem please comunicate with technical support.',
         'emptyrResponse' : 'database still empty',
         'mobileUsers': 'all mobile users',
-        'authFaild': 'authentication is faild.'
+        'authFaild': 'authentication is faild.',
+        'restaurants': 'all restaurants data .'
     },
     ar: {
         'mobileNumberRequired': 'يجب إدخال رقم الموبايل لتسجيل الحساب.',
@@ -46,7 +47,8 @@ const messages = {
         'signUpError': 'خطأ في عملية تسجيل الحساب .',
         'emptyrResponse' : 'قاعدة البيانات ماذالت فارغة .',
         'mobileUsers': 'جميع مستخدمين النظام .',
-        'authFaild': 'فشل في عملية تسجيل الدخول '
+        'authFaild': 'فشل في عملية تسجيل الدخول ',
+        'restaurants': 'جميع بيانات المطاعم المسجلة ..'
 
   
     }

@@ -1,19 +1,19 @@
-const models = require('../../infrastructure/db/models/index') //better to use DI.
+const models = require('../../infrastructure/db/models/index')
 
 module.exports = class{
-    getUser(){
+    createRestaurant(restaurant){
         throw new Error('ERROR_METHOD_NOT_EMPLEMENTED')
     }
-    getAllUsers(){
+    updateRestaurant(restaurantId , restaurant){
         throw new Error('ERROR_METHOD_NOT_EMPLEMENTED')
     }
-    removeUser(userId){
+    getRestaurantById(restaurantId){
         throw new Error('ERROR_METHOD_NOT_EMPLEMENTED')
     }
-    updateUser(userId){
+    getAllRestaurants(){
         throw new Error('ERROR_METHOD_NOT_EMPLEMENTED')
     }
-    createUser(user){
+    removeRestaurant(restaurantId){
         throw new Error('ERROR_METHOD_NOT_EMPLEMENTED')
     }
 }
