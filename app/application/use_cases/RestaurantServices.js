@@ -6,6 +6,8 @@ module.exports = class {
                 this.createRestaurant= this.createRestaurant.bind(this)
                 this.updateRestaurant= this.updateRestaurant.bind(this)
                 this.removeRestaurant= this.removeRestaurant.bind(this)
+                this.findRestaurantByName= this.findRestaurantByName.bind(this)
+                this.findRestaurantByAddress= this.findRestaurantByAddress.bind(this)
         }
         async listRestaurants(){
                 return await this.restaurantReposetory.getAllRestaurants()
@@ -24,5 +26,14 @@ module.exports = class {
         async isYourOwnRestaurant(mobileUserId , restaurantId){
                 const {mobile_user_id} =  await this.restaurantReposetory.getRestaurantById(restaurantId)
                 return mobile_user_id === mobileUserId
+        }
+        async getRestaurantById(restaurantId){
+                return await this.restaurantReposetory.getRestaurantById(restaurantId)
+        }
+        async findRestaurantByName(name){
+                return await this.restaurantReposetory.findRestaurantByName(name)
+        }
+        async findRestaurantByAddress(address){
+                return await this.restaurantReposetory.findRestaurantByAddress(address)
         }
 }
