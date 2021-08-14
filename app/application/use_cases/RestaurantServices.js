@@ -14,10 +14,15 @@ module.exports = class {
                 const restaurant= new Restaurant(mobileUserId , name , address)
                 return await this.restaurantReposetory.createRestaurant(restaurant)
         }
-        async updateRestaurant(restaurantId,restaurant){
+        async updateRestaurant(restaurantId,name , address){
+                const restaurant= new Restaurant(restaurantId , name , address)
                 return await this.restaurantReposetory.updateRestaurant(restaurantId,restaurant)
         }
         async removeRestaurant(restaurantId){
                 return await this.restaurantReposetory.removeRestaurant(restaurantId)
+        }
+        async isYourOwnRestaurant(mobileUserId , restaurantId){
+                const {mobile_user_id} =  await this.restaurantReposetory.getRestaurantById(restaurantId)
+                return mobile_user_id === mobileUserId
         }
 }

@@ -8,5 +8,7 @@ const RestaurantValidator = require('../../domain/restaurant/RestaurantValidator
 
 restaurantRouters.get('/restaurant/all',restaurantControllers.getAllRestaurants)
 restaurantRouters.post('/restaurant/create',RestaurantValidator.restaurantValidate('createRestaurant'),procErr,mobileUserAuth,restaurantControllers.createRestaurant)
+restaurantRouters.put('/restaurant/update/:restaurantId',RestaurantValidator.restaurantValidate('createRestaurant'),procErr,mobileUserAuth,restaurantControllers.updateRestaurant)
+restaurantRouters.delete('/restaurant/delete/:restaurantId',RestaurantValidator.restaurantValidate('deleteRestaurant'),procErr,mobileUserAuth,restaurantControllers.deleteRestaurant)
 
 module.exports = restaurantRouters

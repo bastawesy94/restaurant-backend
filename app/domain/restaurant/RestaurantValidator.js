@@ -1,4 +1,4 @@
-const { check } = require('express-validator')
+const { check ,param} = require('express-validator')
 
 module.exports = class{
 
@@ -8,6 +8,11 @@ module.exports = class{
                 return [
                     check('name').exists().withMessage('nameRequiredField').isString().withMessage('nameStringField'),
                     check('address').exists().withMessage('addressRequiredField').isString().withMessage('addressStringField'),
+                ]
+            }
+            case 'deleteRestaurant': {
+                return [
+                    param('restaurantId').exists().withMessage('nameRequiredField').isNumeric().withMessage('idNumberField'),
                 ]
             }
             case 'updateRestaurant': {

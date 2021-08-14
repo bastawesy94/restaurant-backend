@@ -30,7 +30,10 @@ const messages = {
         'mobileUsers': 'all mobile users',
         'authFaild': 'authentication is faild.',
         'restaurants': 'all restaurants data .',
-        'restaurantCreated': 'restaurant created successfully'
+        'restaurantCreated': 'restaurant created successfully',
+        'permissionError': 'please update or delete your oen restaurant',
+        'restaurantDeleted': 'restaurant id deleted',
+        'idNumberField': 'id must be a number'
     },
     ar: {
         'mobileNumberRequired': 'يجب إدخال رقم الموبايل لتسجيل الحساب.',
@@ -62,7 +65,10 @@ const messages = {
         'mobileUsers': 'جميع مستخدمين النظام .',
         'authFaild': 'فشل في عملية تسجيل الدخول ',
         'restaurants': 'جميع بيانات المطاعم المسجلة .',
-        'restaurantCreated': 'تم اضافة مطعم جديد بنجاح'
+        'restaurantCreated': 'تم اضافة مطعم جديد بنجاح',
+        'permissionError': 'من فضلك قم بتعديل او حزف بيانات المطعم الخاص بك .',
+        'restaurantDeleted': 'تم حزف المطعم .',
+        'idNumberField': 'كود المطعم لابد ان يكون رقم .'
 
 
   
