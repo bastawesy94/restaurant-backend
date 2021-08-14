@@ -10,7 +10,7 @@ module.exports = class {
         async listMobileUsers(){
                 return await this.mobileUserRepository.getAllMobileUsers()
         }
-
+        //auth is done
         async mobieleUserAuth(password , userName){
                 const user = await this.mobileUserRepository.findMobileUserByUserName(userName);
                 if(!user) throw Error('User is not found .')

@@ -3,7 +3,7 @@
 ## You can use it on your local machine by following simple steps : </br>
 1- git clone https://github.com/bastawesy94/restaurant-backend.git </br>
 2- cd + your project path on your PC . </br>
-3- Run this comman #npm install </br>
+3- Run this command line #npm install </br>
 4- create mySQL database with "restaurant" name </br>
 
 ## Now you can use some scripts :
@@ -11,7 +11,7 @@
 (Destroy database tables) #NODE_ENV=local npm run undomigrate </br>
 
 (Fill tables with data of users) #NODE_ENV=local npm run seed </br>
-(Empty tables with data of users) #NODE_ENV=local npm run seed </br>
+(Empty tables with data of users) #NODE_ENV=local npm run undoseed </br>
 
 (Run on local environment) #NODE_ENV=local npm run server </br>
 
