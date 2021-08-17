@@ -19,6 +19,10 @@ module.exports =()=>{
     app.use(express.json());
     app.use('/api' , mobileUserRouters);
     app.use('/api' , restaurantRouters);
+    app.use((req, res, next) => {
+        res.header('Access-Control-Allow-Origin', '*');
+        next();
+      });      
 
     DatabaseService.testConnection(sequelize)
     app.listen(PORT,()=>{console.log(`${serverType} Server Running on ${PORT} !`)});

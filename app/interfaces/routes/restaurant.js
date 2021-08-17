@@ -6,11 +6,11 @@ const restaurantControllers = registerContainer().resolve('restaurantControllers
 const {procErr} = require('../middleware/processError')
 const RestaurantValidator = require('../../domain/restaurant/RestaurantValidator')
 
-restaurantRouters.get('/restaurant/all',restaurantControllers.getAllRestaurants)
-restaurantRouters.get('/restaurant/name-search',restaurantControllers.findRestaurantByName)
-restaurantRouters.get('/restaurant/address-search',restaurantControllers.findRestaurantByAddress)
-restaurantRouters.post('/restaurant/create',RestaurantValidator.restaurantValidate('createRestaurant'),procErr,mobileUserAuth,restaurantControllers.createRestaurant)
-restaurantRouters.put('/restaurant/update/:restaurantId',RestaurantValidator.restaurantValidate('createRestaurant'),procErr,mobileUserAuth,restaurantControllers.updateRestaurant)
-restaurantRouters.delete('/restaurant/delete/:restaurantId',RestaurantValidator.restaurantValidate('deleteRestaurant'),procErr,mobileUserAuth,restaurantControllers.deleteRestaurant)
-restaurantRouters.get('/restaurant/details/:restaurantId',RestaurantValidator.restaurantValidate('deleteRestaurant'),procErr,restaurantControllers.getRestaurantById)
+restaurantRouters.get('/restaurant/get-all',restaurantControllers.getAllRestaurants)
+restaurantRouters.get('/restaurant/name',restaurantControllers.findRestaurantByName)
+restaurantRouters.get('/restaurant/address',restaurantControllers.findRestaurantByAddress)
+restaurantRouters.post('/restaurant/add',RestaurantValidator.restaurantValidate('createRestaurant'),procErr,mobileUserAuth,restaurantControllers.createRestaurant)
+restaurantRouters.put('/restaurant/edit/:restaurantId',RestaurantValidator.restaurantValidate('createRestaurant'),procErr,mobileUserAuth,restaurantControllers.updateRestaurant)
+restaurantRouters.delete('/restaurant/remove/:restaurantId',RestaurantValidator.restaurantValidate('deleteRestaurant'),procErr,mobileUserAuth,restaurantControllers.deleteRestaurant)
+restaurantRouters.get('/restaurant/:restaurantId',RestaurantValidator.restaurantValidate('deleteRestaurant'),procErr,restaurantControllers.getRestaurantById)
 module.exports = restaurantRouters

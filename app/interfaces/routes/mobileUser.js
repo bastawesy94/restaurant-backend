@@ -8,6 +8,6 @@ const MobileUserValidator = require('../../domain/mobile-user/MobileUserValidato
 
 mobileUserRouters.post('/mobile-user/signup',MobileUserValidator.mobileUserValidate('signUp'),procErr, mobileUserControllers.signUp)
 mobileUserRouters.post('/mobile-user/auth',MobileUserValidator.mobileUserValidate('auth'),procErr, mobileUserControllers.auth)
-mobileUserRouters.get('/mobile-user/all',mobileUserControllers.getAllMobileUsers)
+mobileUserRouters.get('/mobile-user/get-all',mobileUserControllers.getAllMobileUsers)
 
 module.exports = mobileUserRouters
